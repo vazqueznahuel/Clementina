@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.button button {
+  padding: 15px;
+  border: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  border-radius: 20px;
+}
