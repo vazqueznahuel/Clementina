@@ -5,8 +5,7 @@ import Label from './components/label/label.jsx'
 function App() {
   return (
     <view>
-      <Label nombre='Ingrese nombre' />
-      Hola
+      <Label infoLabel='Ingrese nombre' />
     </view>
   );
 }
