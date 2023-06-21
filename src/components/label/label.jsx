@@ -1,7 +1,7 @@
 function Label(props) {
     return (
     <div>
-    <h1> {props.nombre} </h1>
+    <label> {props.infoLabel} </label>
     </div>
     );
     }
