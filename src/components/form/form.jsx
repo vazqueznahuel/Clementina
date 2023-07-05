@@ -5,7 +5,7 @@ function Form(props) {
     <div>
         <form method="POST">
             <Label infoLabel="Ingrese su nombre"/>
-            <Button typeButton="submit" nameButton="button-submit" valueButton="hola"/>
+            <Button typeButton="submit" nameButton="button-submit" valueButton="submit-form"/>
         </form>
     </div>
     );
