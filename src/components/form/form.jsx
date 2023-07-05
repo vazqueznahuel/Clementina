@@ -6,6 +6,7 @@ function Form(props) {
     <div>
         <form method="POST">
             <Label infoLabel="Ingrese su nombre"/>
+            <Input typeInput="text" nameInput="Name-User" placeHolderInput="Lionel" />
             <Label infoLabel="Ingrese su Apellido"/>
             <Button typeButton="submit" nameButton="button-submit" valueButton="submit-form" contentButton="Enviar"/>
             <Button typeButton="reset" nameButton="button-reset" valueButton="reset-form" contentButton="Restablecer"/>
