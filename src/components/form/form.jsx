@@ -7,6 +7,7 @@ function Form(props) {
             <Label infoLabel="Ingrese su nombre"/>
             <Label infoLabel="Ingrese su Apellido"/>
             <Button typeButton="submit" nameButton="button-submit" valueButton="submit-form" contentButton="Enviar"/>
+            <Button typeButton="reset" nameButton="button-reset" valueButton="reset-form" contentButton="Restablecer"/>
         </form>
     </div>
     );
