@@ -1,7 +1,9 @@
+import '../../App.css'
+
 function Label(props) {
     return (
     <div>
-    <label> {props.infoLabel} </label>
+    <label className={props.className}> {props.infoLabel} </label>
     </div>
     );
     }
