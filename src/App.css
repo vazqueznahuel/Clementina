@@ -49,3 +49,6 @@ body {
     color: #fff;
   }
   
+  .button[type="reset"] {
+    background-color: #c71414;
+  }
