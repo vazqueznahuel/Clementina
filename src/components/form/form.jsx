@@ -1,18 +1,43 @@
 import Label from '../label/label.jsx'
 import Button from '../button/button.jsx'
 import Input from '../input/input.jsx'
+import '../../App.css'
+
 function Form(props) {
     return (
-    <div>
+        <div className="form-container">
         <form method="POST">
-            <Label infoLabel="Ingrese su nombre"/>
-            <Input typeInput="text" nameInput="Name-User" placeHolderInput="Lionel" />
-            <Label infoLabel="Ingrese su Apellido"/>
-            <Input typeInput="text" nameInput="LastName-User" placeHolderInput="Messi" />
-            <Button typeButton="submit" nameButton="button-submit" valueButton="submit-form" contentButton="Enviar"/>
-            <Button typeButton="reset" nameButton="button-reset" valueButton="reset-form" contentButton="Restablecer"/>
+          <h2 className="form-title">Formulario de Registro</h2>
+          <Label className="info-label" infoLabel="Ingrese su nombre" />
+          <Input
+            className="input-field"
+            typeInput="text"
+            nameInput="Name-User"
+            placeHolderInput="Lionel"
+          />
+          <Label className="info-label" infoLabel="Ingrese su Apellido" />
+          <Input
+            className="input-field"
+            typeInput="text"
+            nameInput="LastName-User"
+            placeHolderInput="Messi"
+          />
+          <Button
+            className="button"
+            typeButton="submit"
+            nameButton="button-submit"
+            valueButton="submit-form"
+            contentButton="Enviar"
+          />
+          <Button
+            className="button"
+            typeButton="reset"
+            nameButton="button-reset"
+            valueButton="reset-form"
+            contentButton="Restablecer"
+          />
         </form>
-    </div>
+      </div>
     );
     }
     export default Form;
