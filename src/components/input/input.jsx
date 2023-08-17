@@ -1,7 +1,9 @@
+import '../../App.css'
+
 function Input (props){
     return (
         <div>
-            <input type={props.typeInput} name={props.nameInput} placeholder={props.placeHolderInput} required/>
+            <input  className={props.className} type={props.typeInput} name={props.nameInput} placeholder={props.placeHolderInput} required/>
         </div>
     );
 }
