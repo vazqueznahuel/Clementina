@@ -27,3 +27,13 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
   }
+
+  /* Campos de entrada */
+.input-field {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
