@@ -44,4 +44,9 @@
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: white;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+p {
+  color: blueviolet;
 }
