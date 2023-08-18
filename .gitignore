@@ -11,6 +11,9 @@
 # production
 /build
 
+#Bloquear firebase para britos
+/src/firebase/firebaseConfi.js
+
 # misc
 .DS_Store
 .env.local
