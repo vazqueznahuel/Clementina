@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
-import { getDocs, collection } from 'firebase/firestore/lite'; // Importa 'collection' desde 'firebase/firestore/lite'
-import db from './firebase/firebaseConfig.js'; // Importa 'db' desde el archivo de configuración
-
+import { collection, getDocs } from 'firebase/firestore'; // Importa collection y getDocs
+import db from './firebase/firebaseConfig.js';
 import './App.css';
 import Form from './components/form/form.jsx';
 
 function App() {
   useEffect(() => {
     const obtenerDatos = async () => {
-      const datos = await getDocs(collection('usuarios', db));
-      console.log(datos.docs[0].data(data));
+      try {
+        const querySnapshot = await getDocs(collection(db, 'usuarios')); // Usa collection aquí
+        querySnapshot.forEach((doc) => {
+          console.log(doc.data());
+        });
+      } catch (error) {
+        console.error('Error fetching documents:', error);
+      }
     };
 
     obtenerDatos();
