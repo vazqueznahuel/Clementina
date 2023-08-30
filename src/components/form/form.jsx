@@ -13,7 +13,7 @@ function Form(props) {
         <div className="form-container">
         <form method="POST">
           <h2 className="form-title">Formulario de Registro</h2>
-          <Label className="info-label" infoLabel="Ingrese su nombre" />
+          <Label className="info-label" infoLabel="Ingrese su correo electronico" />
           <Input
             className="input-field"
             typeInput="email"
