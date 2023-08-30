@@ -17,7 +17,7 @@ function Form(props) {
           <Input
             className="input-field"
             typeInput="email"
-            nameInput="Name-User"
+            nameInput="Name-Email"
             placeHolderInput="Lionel"
             onChange={(ev) => setEmail(ev.target.value)}
           />
