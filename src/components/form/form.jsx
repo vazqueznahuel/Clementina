@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import 'firebase/auth'
+import { useFirebaseApp } from 'reactfire'
 import Label from '../label/label.jsx'
 import Button from '../button/button.jsx'
 import Input from '../input/input.jsx'
