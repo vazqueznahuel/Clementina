@@ -7,6 +7,7 @@ import Input from '../input/input.jsx'
 import '../../App.css'
 
 function Form(props) {
+    const [ email, setEmail ] = useState('');
     return (
         <div className="form-container">
         <form method="POST">
