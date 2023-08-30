@@ -16,9 +16,10 @@ function Form(props) {
           <Label className="info-label" infoLabel="Ingrese su nombre" />
           <Input
             className="input-field"
-            typeInput="text"
+            typeInput="email"
             nameInput="Name-User"
             placeHolderInput="Lionel"
+            onChange={(ev) => setEmail(ev.target.value)}
           />
           <Label className="info-label" infoLabel="Ingrese su Apellido" />
           <Input
