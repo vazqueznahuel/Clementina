@@ -27,6 +27,7 @@ function Form(props) {
             typeInput="text"
             nameInput="LastName-User"
             placeHolderInput="Messi"
+            onChange={(ev) => setPassword(ev.target.value)}
           />
           <Button
             className="button"
