@@ -9,33 +9,19 @@ import '../../App.css'
 function Form(props) {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+
+    const submit = () => {
+      console.log(email, password);
+    }
+
     return (
         <div className="form-container">
-        <form method="POST">
           <h2 className="form-title">Formulario de Registro</h2>
           <Label className="info-label" infoLabel="Ingrese su correo electronico" />
-          <Input
-            className="input-field"
-            typeInput="email"
-            nameInput="Name-Email"
-            placeHolderInput="Lionel"
-            onChange={(ev) => setEmail(ev.target.value)}
-          />
+          <input className='input-field' type='email' id='email' onChange={(ev) => setEmail(ev.target.value)}/>
           <Label className="info-label" infoLabel="Ingrese su Contraseña" />
-          <Input
-            className="input-field"
-            typeInput="text"
-            nameInput="LastName-User"
-            placeHolderInput="Messi"
-            onChange={(ev) => setPassword(ev.target.value)}
-          />
-          <Button
-            className="button"
-            typeButton="submit"
-            nameButton="button-submit"
-            valueButton="submit-form"
-            contentButton="Enviar"
-          />
+          <input className='input-field' type='password' id='password' onChange={(ev) => setPassword(ev.target.value)}/>
+          <button className="button" onClick={submit}>iniciar session</button>
           <Button
             className="button"
             typeButton="reset"
@@ -43,7 +29,6 @@ function Form(props) {
             valueButton="reset-form"
             contentButton="Restablecer"
           />
-        </form>
       </div>
     );
     }
