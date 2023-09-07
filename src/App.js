@@ -1,15 +1,24 @@
-import {Imagen} from './components/imagen/img'
-import imagen1 from './Imagenes/1.jpeg'
-import imagen2 from './Imagenes/2.webp'
-import imagen3 from './Imagenes/3.jpg'
-import { Adrianvazquez } from './components/button/button'
 import './App.css';
+import ThreeScene from './components/ThreeScene';
+import Sphere from './components/Sphere';
+//threejs
+import { OrbitControls } from '@react-three/drei';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Adrianvazquez textoBoton="Enviar" textP="adios" colorfondo="blue" fuente="Arial"/>
-      <Adrianvazquez textoBoton="cancelar" textP="chau" colorfondo="red" fuente="Calibri"/>
+    <div style={
+      {height: '100vh'
+    , overflow: 'hidden'}
+    }>
+      <ThreeScene>
+        <color attach="background" args={['#0a1034']} />
+        <Sphere color="#00ff00" position={[-2, 0, 0]}/>
+        <Sphere color="#00ffff" position={[2, 0, 0]}/>
+        <ambientLight />
+        <OrbitControls />
+      </ThreeScene>
     </div>
   );
 }
