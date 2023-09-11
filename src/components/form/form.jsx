@@ -53,7 +53,7 @@ function Form(props) {
           
         </form>
                   
-        <h4> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"} <button className='button' onClick={()=>setRegistrando(!registrando)}>{registrando ? "Iniciar Sesion" : "Registrate"}</button></h4>
+        <h4 className='form-title'> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"} <button className='button' onClick={()=>setRegistrando(!registrando)}>{registrando ? "Iniciar Sesion" : "Registrate"}</button></h4>
       </div>
     );
     }
