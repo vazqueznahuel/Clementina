@@ -39,8 +39,9 @@ const CameraControls = () => {
   return <orbitControls ref={controls} args={[camera, domElement]} />;
 };
 
-const Model = () => {
-  const gltf = useGLTF('/widiModelo.gltf');
+const Model = ({ modelo }) => {
+  const gltf = useGLTF(modelo);
+  console.log(gltf);
 
 
   const texture = gltf.scene.children[0].material.map; 
@@ -50,10 +51,10 @@ const Model = () => {
   return <primitive object={gltf.scene} />;
 };
 
-const WidiViewer = () => {
+const ModelViewer = ({ modelo }) => {
   return (
     <Canvas
-      camera={{ position: [0, 0, -5] }}
+      camera={{ position: [0, 4, -5] }}
       gl={{ antialias: true }}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping;
@@ -64,10 +65,10 @@ const WidiViewer = () => {
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <CameraControls />
       <Suspense fallback={null}>
-        <Model />
+        <Model modelo={modelo}/>
       </Suspense>
     </Canvas>
   );
 };
 
-export default WidiViewer;
+export default ModelViewer;
