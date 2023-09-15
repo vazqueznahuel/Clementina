@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three'; // Agrega esta línea
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Canvas, extend, useThree, useFrame } from 'react-three-fiber';
 import { useGLTF } from '@react-three/drei';
@@ -27,6 +26,7 @@ const CameraControls = () => {
       controls.current.dampingFactor = 0.1;
       controls.current.enableZoom = true;
       controls.current.zoomSpeed = 1.2;
+      controls.current.enablePan = false; // Deshabilitar el panning
     }
   }, []);
 
@@ -39,9 +39,12 @@ const CameraControls = () => {
   return <orbitControls ref={controls} args={[camera, domElement]} />;
 };
 
-const Model = ({ modelo }) => {
+const Model = ({ modelo, position}) => {
   const gltf = useGLTF(modelo);
   console.log(gltf);
+
+  gltf.scene.position.set(position ? position[0] : 0, position ? position[1] : 0, position ? position[2] : 0);
+
 
 
   const texture = gltf.scene.children[0].material.map; 
@@ -51,21 +54,21 @@ const Model = ({ modelo }) => {
   return <primitive object={gltf.scene} />;
 };
 
-const ModelViewer = ({ modelo }) => {
+const ModelViewer = ({ modelo, modelPosition  }) => {
   return (
-    <Canvas
-      camera={{ position: [0, 4, -5] }}
-      gl={{ antialias: true }}
-      onCreated={({ gl }) => {
-        gl.toneMapping = THREE.ACESFilmicToneMapping;
-        gl.outputEncoding = THREE.sRGBEncoding;
-      }}
-    >
+<Canvas
+  camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
+  gl={{ antialias: true }}
+  onCreated={({ gl }) => {
+    gl.toneMapping = THREE.ACESFilmicToneMapping;
+    gl.outputEncoding = THREE.sRGBEncoding;
+  }}
+>
       <ambientLight intensity={3.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <CameraControls />
       <Suspense fallback={null}>
-        <Model modelo={modelo}/>
+        <Model modelo={modelo} position={modelPosition}/>
       </Suspense>
     </Canvas>
   );
