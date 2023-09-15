@@ -19,8 +19,10 @@ const CameraControls = () => {
   // Configura las restricciones de los controles
   useEffect(() => {
     if (controls.current) {
-      controls.current.minPolarAngle = Math.PI / 4; // Ángulo mínimo (45 grados)
-      controls.current.maxPolarAngle = (3 * Math.PI) / 4; // Ángulo máximo (135 grados)
+      controls.current.minPolarAngle = (Math.PI / 180) * 90; // Mínimo en grados (60 grados)
+      controls.current.maxPolarAngle = (Math.PI / 180) * 90; // Máximo en grados (120 grados)   
+      controls.current.minDistance = 2.5; // Distancia mínima (valor determinado)
+      controls.current.maxDistance = 2.5; // Distancia máxima (valor determinado)
       controls.current.enableDamping = true;
       controls.current.dampingFactor = 0.1;
       controls.current.enableZoom = true;
@@ -40,19 +42,18 @@ const CameraControls = () => {
 const Model = () => {
   const gltf = useGLTF('/widiModelo.gltf');
 
-  // Accede a la textura dentro del modelo GLTF
-  const texture = gltf.scene.children[0].material.map; // Asegúrate de que la ruta correcta a la textura sea la adecuada
 
-  // Aplica el filtro NearestFilter a la textura
+  const texture = gltf.scene.children[0].material.map; 
+
   texture.magFilter = THREE.NearestFilter;
 
   return <primitive object={gltf.scene} />;
 };
 
-const ModelViewer = () => {
+const WidiViewer = () => {
   return (
     <Canvas
-      camera={{ position: [0, 0, 5] }}
+      camera={{ position: [0, 0, -5] }}
       gl={{ antialias: true }}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping;
@@ -61,7 +62,7 @@ const ModelViewer = () => {
     >
       <ambientLight intensity={3.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <CameraControls /> {/* Usa los controles personalizados */}
+      <CameraControls />
       <Suspense fallback={null}>
         <Model />
       </Suspense>
@@ -69,4 +70,4 @@ const ModelViewer = () => {
   );
 };
 
-export default ModelViewer;
+export default WidiViewer;
