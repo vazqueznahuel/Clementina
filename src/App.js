@@ -1,64 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ModelViewer from './components/ModelViewer';
 
 function App() {
-  const modelPaths = [
-    '/widiModelo.gltf',
-    '/epet8.gltf',
-    '/epet5.gltf'
-    // Agrega más rutas de modelos 
-  ];
+  const [sliderPosition, setSliderPosition] = useState(0);
+  const maxSliderPosition = 3; // Cambia esto según la cantidad de modelos que tengas
+  const sliderLimit = 0.66666666;
+  const movementLimit = 0.33333333;
 
-  const modelPositions = [
-    [0, -1, 0],
-    [0, -1, 0],
-    [0, -1, 0]
-    // Agrega más posiciones de modelos 
-  ];
-
-  const [modelsLoaded, setModelsLoaded] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const loadModels = async () => {
-    const modelPromises = modelPaths.map(async (path) => {
-      const response = await fetch(path);
-      const modelData = await response.arrayBuffer();
-      // Aquí puedes cargar el modelo en tu visor 3D o realizar cualquier otra operación necesaria
-    });
-
-    await Promise.all(modelPromises);
-    setModelsLoaded(true);
-  };
-
-  useEffect(() => {
-    loadModels();
-  }, []);
-
-  const handleNextModel = () => {
-    if (modelsLoaded) {
-      console.log("Siguiente Modelo:", modelPaths[currentIndex]); // Imprime la ruta del modelo
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % modelPaths.length);
-    } else {
-      console.log("Los modelos aún se están cargando. Por favor, espera...");
+  const handlePrevClick = () => {
+    if (sliderPosition > 0) {
+      setSliderPosition(sliderPosition - movementLimit);
+      console.log(sliderPosition)
     }
   };
 
-  const handlePreviousModel = () => {
-    if (modelsLoaded) {
-      console.log("Modelo Anterior:", modelPaths[currentIndex]); // Imprime la ruta del modelo
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + modelPaths.length) % modelPaths.length);
-    } else {
-      console.log("Los modelos aún se están cargando. Por favor, espera...");
+  const handleNextClick = () => {
+    if (sliderPosition < sliderLimit) {
+      setSliderPosition(sliderPosition + movementLimit);
+      console.log(sliderPosition)
     }
+  };
+
+  const getModelViewerStyle = (index) => {
+    return {
+      transform: `translateX(-${sliderPosition * 100}%)`,
+      transition: 'transform 0.5s ease-in-out',
+      display: 'flex',
+    };
   };
 
   return (
-    <div>
-      <div style={{ height: '70vh', overflow: 'hidden' }}>
-        <ModelViewer modelo={modelPaths[currentIndex]} modelPosition={modelPositions[currentIndex]} />
+    <div style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
+      <div className="model-viewer-slider" style={{ display: 'flex', width: `${maxSliderPosition * 100}%`, ...getModelViewerStyle() }}>
+        <ModelViewer modelo='/widiModelo.gltf' modelPosition={[0, 0, 0]} />
+        <ModelViewer modelo='/epet5.gltf'  modelPosition={[0, 0, 0]} />
+        <ModelViewer modelo='/epet8.gltf'  modelPosition={[0, 0, 0]}   />
       </div>
-      <button onClick={handlePreviousModel}>Modelo Anterior</button>
-      <button onClick={handleNextModel}>Siguiente Modelo</button>
+      <div className="slider-controls">
+        <button onClick={handlePrevClick} disabled={sliderPosition === 0}>Anterior</button>
+        <button onClick={handleNextClick} disabled={sliderPosition === sliderLimit}>Siguiente</button>
+      </div>
     </div>
   );
 }

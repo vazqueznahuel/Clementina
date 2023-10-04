@@ -41,7 +41,6 @@ const CameraControls = () => {
 
 const Model = ({ modelo, position}) => {
   const gltf = useGLTF(modelo);
-  console.log(gltf);
 
   gltf.scene.position.set(position ? position[0] : 0, position ? position[1] : 0, position ? position[2] : 0);
 
@@ -57,6 +56,7 @@ const Model = ({ modelo, position}) => {
 const ModelViewer = ({ modelo, modelPosition  }) => {
   return (
 <Canvas
+  style={{width: '100%', height: '45vh'}}
   camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
   gl={{ antialias: true }}
   onCreated={({ gl }) => {
