@@ -53,7 +53,7 @@ const Model = ({ modelo, position}) => {
   return <primitive object={gltf.scene} />;
 };
 
-const ModelViewer = ({ modelo, modelPosition  }) => {
+const ModelViewer = ({ modelo }) => {
   return (
 <Canvas
   style={{width: '100%', height: '45vh'}}
@@ -68,7 +68,7 @@ const ModelViewer = ({ modelo, modelPosition  }) => {
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <CameraControls />
       <Suspense fallback={null}>
-        <Model modelo={modelo} position={modelPosition}/>
+        <Model modelo={modelo}/>
       </Suspense>
     </Canvas>
   );
