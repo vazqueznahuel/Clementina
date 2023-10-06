@@ -39,16 +39,20 @@ const CameraControls = () => {
   return <orbitControls ref={controls} args={[camera, domElement]} />;
 };
 
-const Model = ({ modelo, position}) => {
+const Model = ({ modelo, position }) => {
   const gltf = useGLTF(modelo);
 
+  // Recorre todos los objetos en la escena y configura las texturas
+  gltf.scene.traverse((object) => {
+    if (object.isMesh) {
+      const material = object.material;
+      if (material.map) {
+        material.map.magFilter = THREE.NearestFilter;
+      }
+    }
+  });
+
   gltf.scene.position.set(position ? position[0] : 0, position ? position[1] : 0, position ? position[2] : 0);
-
-
-
-  const texture = gltf.scene.children[0].material.map; 
-
-  texture.magFilter = THREE.NearestFilter;
 
   return <primitive object={gltf.scene} />;
 };
