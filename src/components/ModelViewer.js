@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three'; // Agrega esta línea
+import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { Canvas, extend, useThree, useFrame } from 'react-three-fiber';
-import { useGLTF } from '@react-three/drei';
+import { Canvas, extend, useThree, useFrame, useLoader } from 'react-three-fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Suspense } from 'react';
 
 // Extiende OrbitControls para personalizar los controles
@@ -19,7 +19,7 @@ const CameraControls = () => {
   useEffect(() => {
     if (controls.current) {
       controls.current.minPolarAngle = (Math.PI / 180) * 90; // Mínimo en grados (60 grados)
-      controls.current.maxPolarAngle = (Math.PI / 180) * 90; // Máximo en grados (120 grados)   
+      controls.current.maxPolarAngle = (Math.PI / 180) * 90; // Máximo en grados (120 grados)
       controls.current.minDistance = 2.5; // Distancia mínima (valor determinado)
       controls.current.maxDistance = 2.5; // Distancia máxima (valor determinado)
       controls.current.enableDamping = true;
@@ -40,7 +40,20 @@ const CameraControls = () => {
 };
 
 const Model = ({ modelo, position }) => {
-  const gltf = useGLTF(modelo);
+  const gltf = useLoader(GLTFLoader, modelo);
+  
+  let mixer;
+  if (gltf.animations.length) {
+    mixer = new THREE.AnimationMixer(gltf.scene);
+    gltf.animations.forEach(clip => {
+      const action = mixer.clipAction(clip);
+      action.play();
+    });
+  }
+
+  useFrame((state, delta) => {
+    mixer?.update(delta);
+  });
 
   // Recorre todos los objetos en la escena y configura las texturas
   gltf.scene.traverse((object) => {
@@ -52,27 +65,28 @@ const Model = ({ modelo, position }) => {
     }
   });
 
-  gltf.scene.position.set(position ? position[0] : 0, position ? position[1] : 0, position ? position[2] : 0);
-
+    gltf.scene.position.set(position ? position[0] : 0, position ? position[1] : 0, position ? position[2] : 0);
+    
   return <primitive object={gltf.scene} />;
 };
 
 const ModelViewer = ({ modelo }) => {
   return (
-<Canvas
-  style={{width: '100%', height: '45vh'}}
-  camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
-  gl={{ antialias: true }}
-  onCreated={({ gl }) => {
-    gl.toneMapping = THREE.ACESFilmicToneMapping;
-    gl.outputEncoding = THREE.sRGBEncoding;
-  }}
->
+    <Canvas
+      style={{ width: '100%', height: '45vh' }}
+      camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
+      gl={{ antialias: true }}
+      onCreated={({ gl }) => {
+        gl.toneMapping = THREE.ACESFilmicToneMapping;
+        gl.outputEncoding = THREE.sRGBEncoding;
+      }}
+    >
+      
       <ambientLight intensity={3.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <CameraControls />
       <Suspense fallback={null}>
-        <Model modelo={modelo}/>
+        <Model modelo={modelo} />
       </Suspense>
     </Canvas>
   );

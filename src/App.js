@@ -18,14 +18,19 @@ function App() {
       title: 'Dozer',
       school: 'EPET 8',
       description: 'Este conejo se hizo un robot para que no le duela el brazo de llevar el tablero y ahora le duele la espalda, es de la epet 8'
+    },
+    {
+      title: 'Jeison',
+      school: 'EPET 6',
+      description: 'El era un muercielago normal y feliz hasta que le agarro cancer de oreja y se la reemplazaron por antenas de router'
     }
   ];
 
   const [sliderPosition, setSliderPosition] = useState(0);
   const [currentInfoIndex, setCurrentInfoIndex] = useState(0);
-  const maxSliderPosition = 3; // Cambia esto según la cantidad de modelos que tengas
-  const sliderLimit = 0.66666666;
-  const movementLimit = 0.33333333;
+  const maxSliderPosition = 4; // Cambia esto según la cantidad de modelos que tengas
+  const sliderLimit = 0.75;
+  const movementLimit = 0.25;
 
   const handlePrevClick = () => {
     if (sliderPosition > 0) {
@@ -55,6 +60,7 @@ function App() {
         <ModelViewer modelo='/widiModelo.gltf'  />
         <ModelViewer modelo='/epet5.gltf' />
         <ModelViewer modelo='/epet8.gltf' />
+        <ModelViewer modelo='/epet6.gltf' />
       </div>
       <div className="slider-controls">
         <button onClick={handlePrevClick} disabled={sliderPosition === 0}>Anterior</button>
