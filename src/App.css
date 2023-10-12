@@ -148,3 +148,21 @@ body {
   background-color: #ffffff9c;
   border-radius: 4px;
 }
+
+
+
+.menuppal li button {
+  display: block;
+  padding: 10px;
+  width: 300px;
+  color: white;
+  text-decoration: none;
+  background-color: #c70808ec;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.menuppal li a:hover {
+  background-color: #ffffff9c;
+  border-radius: 4px;
+}
