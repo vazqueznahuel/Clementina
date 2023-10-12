@@ -1,5 +1,21 @@
 
 function Register(props) {
+  const navigate = useNavigate();
+  const functAutenticacion = async (e) =>{  
+      e.preventDefault();
+      const correo = e.target.email.value;
+      const contraseña = e.target.password.value;
+       
+      try {
+        await createUserWithEmailAndPassword(auth, correo, contraseña);  
+        alert("Registradoo!!") 
+        navigate("/Home");
+      } catch (error) {
+        alert("Asegurese que la contraseña tenga 8 caracteres")
+      }
+      
+  }
+
 
     return (
 
