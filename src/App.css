@@ -83,3 +83,10 @@ body {
   vertical-align: middle;
   margin-right: 10px;
 }
+
+.verPassword{
+  position: absolute;
+  left: 59%;
+  top: 41%;
+}
+
