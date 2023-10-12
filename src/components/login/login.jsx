@@ -62,7 +62,49 @@ function Login(props) {
 
     return (
     <>
+        <Nav/>
+    <div className="form-container">
+        <h2 className='form-title'>Iniciar Sesion</h2>
 
+        <form onSubmit={functAutenticacion}>
+
+          <Label className="info-label" infoLabel="Ingrese email"/>
+          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
+                       
+          <Label className="info-label" infoLabel="Ingrese contraseña"/>
+          <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
+          <button
+          type="button"
+          className="verPassword"
+          onClick={togglePasswordVisibility}
+          >
+            c
+          </button>
+          <button className='button'>Inicia Sesion</button>
+          
+        </form>
+
+        <button onClick={signInWithGoogle} className='google-signin-button'>
+          <FontAwesomeIcon icon={faGoogle} />
+          <span>Iniciar sesión con Google</span>
+        </button>    
+
+        <button onClick={signInWithGithub} className='google-signin-button'>
+          <FontAwesomeIcon icon={faGithub} />
+          <span>Iniciar sesión con GitHub</span>
+        </button>
+
+        <h6 className='form-title'>
+            <Link to='/Recuper-Contraseña' className='button'>
+             ¿Olvidaste tu contraseña?
+            </Link>
+        </h6>
+        <h4 className='form-title'> ¿No tienes cuenta?
+            <Link to='/Registro' className='button'>
+                Registrate
+            </Link>
+        </h4>
+      </div>
     </>
     );
     }
