@@ -1,3 +1,12 @@
+import React, { useState } from 'react'
+import Label from '../label/label.jsx'
+import '../../App.css'
+import { Link, useNavigate } from 'react-router-dom';
+
+import appFirebase from '../../firebase/firebaseConfig.js';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+const auth = getAuth(appFirebase);
+
 
 function Register(props) {
   const navigate = useNavigate();
