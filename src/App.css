@@ -135,3 +135,16 @@ body {
 .menuppal li {
   margin: 10px 0;
 }
+
+.menuppal li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.menuppal li button:hover {
+  background-color: #ffffff9c;
+  border-radius: 4px;
+}
