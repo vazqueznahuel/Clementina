@@ -4,6 +4,8 @@ import Label from '../label/label.jsx'
 import Button from '../button/button.jsx'
 import Input from '../input/input.jsx'
 import '../../App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
