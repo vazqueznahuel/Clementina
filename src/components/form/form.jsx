@@ -37,6 +37,27 @@ function Form(props) {
         }
       }
   }
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);  // Puedes acceder a la información del usuario aquí
+      }).catch((error) => {
+        console.log(error.message);
+      });
+  };
+  
+  const signInWithGithub = () => {
+    const provider = new GithubAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);  // Puedes acceder a la información del usuario aquí
+      }).catch((error) => {
+        console.log(error.message);
+      });
+  };
+
     return (
 
     <div className="form-container">
