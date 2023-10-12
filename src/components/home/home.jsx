@@ -10,7 +10,7 @@ const auth = getAuth(appFirebase);
 function Home({ correoUsuario }) {
     return (
         <>
-          
+          <Nav/>
         </>
     );
 }
