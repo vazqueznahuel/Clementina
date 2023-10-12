@@ -90,3 +90,22 @@ body {
   top: 41%;
 }
 
+
+.hamburger {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+._layer {
+  background: #5b37ff;
+  width: 28px;
+  height: 4px;
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
