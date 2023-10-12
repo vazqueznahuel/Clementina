@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import 'firebase/auth'
 import { useFirebaseApp } from 'reactfire'
 import Label from '../label/label.jsx'
 import Button from '../button/button.jsx'
@@ -7,13 +6,13 @@ import Input from '../input/input.jsx'
 import '../../App.css'
 
 import appFirebase from '../../firebase/firebaseConfig.js'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 const auth = getAuth(appFirebase);
 
 function Form(props) {
     
   const [registrando, setRegistrando] = useState(false);
-
+  console.log(registrando)
   const functAutenticacion = async (e) =>{  
       e.preventDefault();
       const correo = e.target.email.value;
@@ -39,7 +38,7 @@ function Form(props) {
     return (
 
     <div className="form-container">
-        <h2 className='form-title'> {registrando ? "Iniciar Sesion" : "Registrate"} </h2>
+        <h2 className='form-title'> {registrando ? "Registrate" : "Iniciar Sesion"} </h2>
 
         <form onSubmit={functAutenticacion}>
 
@@ -52,7 +51,16 @@ function Form(props) {
           <button className='button'>{registrando ? "Registrate" : "Inicia Sesion"}</button>
           
         </form>
-                  
+
+        <button onClick={signInWithGoogle} className='google-signin-button'>
+          <FontAwesomeIcon icon={faGoogle} />
+          <span>Iniciar sesión con Google</span>
+        </button>    
+
+        <button onClick={signInWithGithub} className='google-signin-button'>
+          <FontAwesomeIcon icon={faGithub} />
+          <span>Iniciar sesión con GitHub</span>
+        </button>
         <h4 className='form-title'> {registrando ? "Si ya tienes cuenta" : "No tienes cuenta"} <button className='button' onClick={()=>setRegistrando(!registrando)}>{registrando ? "Iniciar Sesion" : "Registrate"}</button></h4>
       </div>
     );
