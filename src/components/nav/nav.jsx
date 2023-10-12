@@ -1,5 +1,49 @@
 
 function Nav(props) {  
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef(null);
+    
+    const [usuario, setUsuario] = useState(null);
+    const navigate = useNavigate(); // Obtiene la función navigate
+
+    const toggleMenu = () => {
+      setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+    };
+  
+    const closeMenu = () => {
+      setIsMenuOpen(false);
+    };
+  
+    useEffect(() => {
+      function handleOutsideClick(event) {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          closeMenu();
+        }
+      }
+  
+      document.addEventListener("mousedown", handleOutsideClick);
+      return () => {
+        document.removeEventListener("mousedown", handleOutsideClick);
+      };
+    }, []);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (usuarioFirebase) => {
+            if (usuarioFirebase) {
+                setUsuario(usuarioFirebase);
+            } else {
+                setUsuario(null);
+                // Redirige al usuario a la página de inicio de sesión
+                navigate('/Login'); // Reemplaza '/login' con la ruta real de inicio de sesión
+            }
+        });
+
+        // Limpia la suscripción al desmontar el componente
+        return () => unsubscribe();
+    }, [navigate]);
+
+
+
     return (
       <div
         ref={menuRef}
