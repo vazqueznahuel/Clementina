@@ -1,3 +1,9 @@
+import React, { useState, useEffect, useRef } from 'react'
+import appFirebase from '../../firebase/firebaseConfig.js'
+import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
+const auth = getAuth(appFirebase);
+
 
 function Nav(props) {  
     const [isMenuOpen, setIsMenuOpen] = useState(false);
