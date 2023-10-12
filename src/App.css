@@ -18,6 +18,7 @@ body {
   
   .form-title {
     font-size: 20px;
+    margin-top: 15px;
     margin-bottom: 20px;
   }
   
@@ -39,14 +40,46 @@ body {
   
 /* Botones */
 .button {
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 15px;
     margin-right: 10px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     background-color: #007bff;
     color: #fff;
+    text-decoration: none;
   }
   
   
+  /* Estilos base para el botón */
+.google-signin-button {
+  background-color: #4285f4;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+/* Efecto de sombra al pasar el ratón */
+.google-signin-button:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de texto en el botón */
+.google-signin-button span {
+  padding: 0 10px;
+}
+
+/* Icono de Google */
+.google-signin-button i {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
