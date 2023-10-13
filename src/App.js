@@ -23,24 +23,32 @@ function App() {
       title: 'Jeison',
       school: 'EPET 6',
       description: 'El era un muercielago normal y feliz hasta que le agarro cancer de oreja y se la reemplazaron por antenas de router'
+    },
+    {
+      title: 'Jeison',
+      school: 'EPET 6',
+      description: 'El era un muercielago normal y feliz hasta que le agarro cancer de oreja y se la reemplazaron por antenas de router'
     }
   ];
 
   const [sliderPosition, setSliderPosition] = useState(0);
   const [currentInfoIndex, setCurrentInfoIndex] = useState(0);
-  const maxSliderPosition = 4; // Cambia esto según la cantidad de modelos que tengas
-  const sliderLimit = 0.75;
-  const movementLimit = 0.25;
+  const maxSliderPosition = 5; // Cambia esto según la cantidad de modelos que tengas
+  const sliderLimit = 0.8;
+  const movementLimit = 0.2;
 
   const handlePrevClick = () => {
-    if (sliderPosition > 0) {
+    if (sliderPosition > 0 && currentInfoIndex > 0) {
+      console.log(sliderPosition)
       setSliderPosition(sliderPosition - movementLimit);
       setCurrentInfoIndex(currentInfoIndex - 1);
     }
   };
+  
 
   const handleNextClick = () => {
     if (sliderPosition < sliderLimit) {
+      console.log(sliderPosition)
       setSliderPosition(sliderPosition + movementLimit);
       setCurrentInfoIndex(currentInfoIndex + 1);
     }
@@ -61,9 +69,10 @@ function App() {
         <ModelViewer modelo='/epet5.gltf' />
         <ModelViewer modelo='/epet8.gltf' />
         <ModelViewer modelo='/epet6.gltf' />
+        <ModelViewer modelo='/epet3.gltf' />
       </div>
       <div className="slider-controls">
-        <button onClick={handlePrevClick} disabled={sliderPosition === 0}>Anterior</button>
+        <button onClick={handlePrevClick} disabled={sliderPosition === 0 || sliderPosition === 5.551115123125783e-17}>Anterior</button>
         <button onClick={handleNextClick} disabled={sliderPosition === sliderLimit}>Siguiente</button>
       </div>
       <Info

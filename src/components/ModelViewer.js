@@ -78,12 +78,11 @@ const ModelViewer = ({ modelo }) => {
       gl={{ antialias: true }}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping;
-        gl.outputEncoding = THREE.sRGBEncoding;
       }}
     >
       
-      <ambientLight intensity={3.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <ambientLight intensity={4.0} />
+      <pointLight position={[10, 10, 10]} intensity={1.0} />
       <CameraControls />
       <Suspense fallback={null}>
         <Model modelo={modelo} />
