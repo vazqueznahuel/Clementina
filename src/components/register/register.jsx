@@ -21,7 +21,12 @@ function Register(props) {
       return;
     }
     
-      try {
+    if (!/[A-Z]/.test(contraseña)) {
+      alert("La contraseña debe contener al menos una letra mayúscula");
+      return;
+    }
+    
+    try {
         await createUserWithEmailAndPassword(auth, correo, contraseña);  
         alert("Registradoo!!") 
         navigate("/Home");
