@@ -24,7 +24,7 @@ function Register(props) {
     }
     
     if (!/[A-Z]/.test(contraseña)) {
-      alert("La contraseña debe contener al menos una letra mayúscula");
+      setErrorMessage("La contraseña debe contener al menos una letra mayúscula");
       return;
     }
     
