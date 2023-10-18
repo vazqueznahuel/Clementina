@@ -19,7 +19,7 @@ function Register(props) {
       
       // Validación de la contraseña
     if (contraseña.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres");
+      setErrorMessage("La contraseña debe tener al menos 6 caracteres");
       return;
     }
     
