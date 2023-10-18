@@ -3,6 +3,7 @@ import Label from '../label/label.jsx'
 import '../../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signInAnonymously } from 'firebase/auth'
