@@ -3,7 +3,7 @@ import Label from '../label/label.jsx'
 import '../../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faUserSecret  } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signInAnonymously } from 'firebase/auth'
@@ -96,7 +96,8 @@ function Login(props) {
         </button>
 
         <button onClick={signInAnonimo} className='google-signin-button'>
-          Iniciar sesión de forma anónima
+          <FontAwesomeIcon icon={faUserSecret} />
+          <span>Iniciar sesión de forma anónima</span>
         </button>
 
         <h6 className='form-title'>
