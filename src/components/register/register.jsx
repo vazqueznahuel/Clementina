@@ -14,7 +14,13 @@ function Register(props) {
       e.preventDefault();
       const correo = e.target.email.value;
       const contraseña = e.target.password.value;
-       
+      
+      // Validación de la contraseña
+    if (contraseña.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres");
+      return;
+    }
+    
       try {
         await createUserWithEmailAndPassword(auth, correo, contraseña);  
         alert("Registradoo!!") 
