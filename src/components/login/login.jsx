@@ -60,6 +60,10 @@ function Login(props) {
       });
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
     return (
     <>
     <div className="form-container">
