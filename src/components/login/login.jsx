@@ -12,7 +12,6 @@ const auth = getAuth(appFirebase);
 function Login(props) {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState("");
 
   const functAutenticacion = async (e) =>{  
       e.preventDefault();
