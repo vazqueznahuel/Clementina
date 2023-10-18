@@ -11,6 +11,20 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const auth = getAuth(appFirebase);
 
+  function AppRouter() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setIsAuthenticated(true);
+            } else {
+                setIsAuthenticated(false);
+            }
+        });
+    }, []);
+    }
+
     function AppRouter() {
     return (
       <>
