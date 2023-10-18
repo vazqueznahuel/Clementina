@@ -29,7 +29,7 @@ function Register(props) {
     }
     
     if (!/[0-9]/.test(contraseña)) {
-      alert("La contraseña debe contener al menos un número");
+      setErrorMessage("La contraseña debe contener al menos un número");
       return;
     }
     
