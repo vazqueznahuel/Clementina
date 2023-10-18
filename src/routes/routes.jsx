@@ -28,16 +28,16 @@ const auth = getAuth(appFirebase);
     function AppRouter() {
     return (
       <>
-        <Router>
+      <Router>
         <Routes>
-            <Route
-                exact
-                path="/"
-                element= {<Login/>}
-            />
-            <Route path='/Registro' element={<Register/>}/>
-            <Route path='/Login' element={<Login/>}/>
-            <Route path='/Home' element={<Home  />}/>
+          <Route
+            exact
+            path="/"
+            element={ isAuthenticated ? <Navigate to="/Home" /> : <Login/> }
+          />
+          <Route path='/Registro' element={<Register/>}/>
+          <Route path='/Login' element={<Login/>}/>
+          <Route path='/Home' element={<Home/>}/>
         </Routes>
         </Router>
       </>    
