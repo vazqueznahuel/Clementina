@@ -75,8 +75,12 @@ function Login(props) {
           <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
                        
           <Label className="info-label" infoLabel="Ingrese contraseña"/>
-          <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
-         
+          <div style={{position: 'relative'}}>
+            <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
+            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'white'}}>
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </button>
+          </div>
           <button className='button'>Inicia Sesion</button>
           
         </form>
