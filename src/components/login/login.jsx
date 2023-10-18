@@ -14,11 +14,6 @@ function Login(props) {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
 
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   const functAutenticacion = async (e) =>{  
       e.preventDefault();
       const correo = e.target.email.value;
