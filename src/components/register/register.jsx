@@ -10,6 +10,8 @@ const auth = getAuth(appFirebase);
 
 function Register(props) {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
+
   const functAutenticacion = async (e) =>{  
       e.preventDefault();
       const correo = e.target.email.value;
