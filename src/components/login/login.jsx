@@ -4,7 +4,6 @@ import '../../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import Nav from '../nav/nav.jsx';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 const auth = getAuth(appFirebase);
