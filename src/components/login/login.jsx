@@ -58,7 +58,6 @@ function Login(props) {
 
     return (
     <>
-        <Nav/>
     <div className="form-container">
         <h2 className='form-title'>Iniciar Sesion</h2>
 
