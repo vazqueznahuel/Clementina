@@ -11,21 +11,18 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const auth = getAuth(appFirebase);
 
-  function AppRouter() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setIsAuthenticated(true);
-            } else {
-                setIsAuthenticated(false);
-            }
-        });
-    }, []);
-    }
-
     function AppRouter() {
+      const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+      useEffect(() => {
+          onAuthStateChanged(auth, (user) => {
+              if (user) {
+                  setIsAuthenticated(true);
+              } else {
+                  setIsAuthenticated(false);
+              }
+          });
+      }, []);
     return (
       <>
       <Router>
@@ -39,7 +36,7 @@ const auth = getAuth(appFirebase);
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Home' element={<Home/>}/>
         </Routes>
-        </Router>
+      </Router>
       </>    
     );
     }
