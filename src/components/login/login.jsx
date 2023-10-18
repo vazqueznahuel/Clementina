@@ -64,7 +64,7 @@ function Login(props) {
         console.error(error);
       });
   };
-  
+
     return (
     <>
     <div className="form-container">
@@ -96,6 +96,10 @@ function Login(props) {
         <button onClick={signInWithGithub} className='google-signin-button'>
           <FontAwesomeIcon icon={faGithub} />
           <span>Iniciar sesión con GitHub</span>
+        </button>
+
+        <button onClick={signInAnonimo} className='google-signin-button'>
+          Iniciar sesión de forma anónima
         </button>
 
         <h6 className='form-title'>
