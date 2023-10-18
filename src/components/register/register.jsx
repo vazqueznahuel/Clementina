@@ -38,7 +38,7 @@ function Register(props) {
         alert("Registradoo!!") 
         navigate("/Home");
       } catch (error) {
-        alert("Asegurese que la contraseña tenga 8 caracteres")
+        setErrorMessage("Hubo un error inesperado, por favor intente más tarde")        
       }
       
   }
