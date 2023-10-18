@@ -77,13 +77,7 @@ function Login(props) {
                        
           <Label className="info-label" infoLabel="Ingrese contraseña"/>
           <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
-          <button
-          type="button"
-          className="verPassword"
-          onClick={togglePasswordVisibility}
-          >
-            c
-          </button>
+         
           <button className='button'>Inicia Sesion</button>
           
         </form>
