@@ -55,6 +55,16 @@ function Login(props) {
       });
   };
 
+  const signInAnonimo = () => {
+    signInAnonymously(auth)
+      .then(() => {
+        navigate("/Home");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  
     return (
     <>
     <div className="form-container">
