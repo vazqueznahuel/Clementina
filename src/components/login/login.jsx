@@ -81,7 +81,7 @@ function Login(props) {
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
             <h6 className='olvidar-contraseña'>
-              <Link to='/Recuper-Contraseña'>
+              <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
               ¿Olvidaste tu contraseña?
               </Link>
             </h6>
