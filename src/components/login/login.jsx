@@ -74,7 +74,7 @@ function Login(props) {
           <Label className="info-label" infoLabel="Ingrese email"/>
           <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
                        
-          <Label className="info-label" infoLabel="Ingrese contraseña"/>
+          <Label className="info-label" infoLabel="Contraseña"/>
           <div style={{position: 'relative'}}>
             <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
             <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
