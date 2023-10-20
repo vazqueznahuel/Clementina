@@ -80,6 +80,11 @@ function Login(props) {
             <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
+            <h6 className='olvidar-contraseña'>
+              <Link to='/Recuper-Contraseña'>
+              ¿Olvidaste tu contraseña?
+              </Link>
+            </h6>
           </div>
           <button className='button'>Inicia Sesion</button>
           
@@ -100,11 +105,6 @@ function Login(props) {
           <span>Iniciar sesión de forma anónima</span>
         </button>
 
-        <h6 className='form-title'>
-            <Link to='/Recuper-Contraseña' className='button'>
-             ¿Olvidaste tu contraseña?
-            </Link>
-        </h6>
         <h4 className='form-title'> ¿No tienes cuenta?
             <Link to='/Registro' className='button'>
                 Registrate
