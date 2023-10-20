@@ -71,7 +71,7 @@ function Login(props) {
 
         <form onSubmit={functAutenticacion}>
 
-          <Label className="info-label" infoLabel="Ingrese email"/>
+          <Label className="info-label" infoLabel="Email"/>
           <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
                        
           <Label className="info-label" infoLabel="Contraseña"/>
