@@ -44,7 +44,16 @@ body {
     outline: none;
   }
   
-  
+  .olvidar-contraseña{
+    position: relative;
+    left: 36%;
+  }
+
+  .link-olvidar-contraseña{
+    color: black;
+    text-decoration: none;
+  }
+
 /* Botones */
 .button {
     padding: 10px;
