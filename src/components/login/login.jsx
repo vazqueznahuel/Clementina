@@ -77,7 +77,7 @@ function Login(props) {
           <Label className="info-label" infoLabel="Ingrese contraseña"/>
           <div style={{position: 'relative'}}>
             <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
-            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'white'}}>
+            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
           </div>
