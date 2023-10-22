@@ -6,6 +6,7 @@ import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEye, faEyeSlash, faUserSecret  } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import appFirebase from '../../firebase/firebaseConfig.js'
+import img1 from '../../imagenes/img1.png'
 import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signInAnonymously } from 'firebase/auth'
 const auth = getAuth(appFirebase);
 
@@ -66,9 +67,12 @@ function Login(props) {
 
     return (
     <>
+    <img src={img1} className='imagen-widi'/>
     <div className="form-container">
+      <div className='registro'>
         <h2 className='form-title'>Iniciar Sesion</h2>
-
+      </div>
+      <hr className='Line-separator-2ConfigPers' />
         <form onSubmit={functAutenticacion}>
 
           <Label className="info-label" infoLabel="Email"/>
@@ -87,29 +91,28 @@ function Login(props) {
             </h6>
           </div>
           <button className='button'>Inicia Sesion</button>
-          
         </form>
-
-        <button onClick={signInWithGoogle} className='google-signin-button'>
+      <div className='registro'>
+        <h6 className=''> ¿No tienes cuenta?
+                    <Link to='/Registro' className='link-olvidar-contraseña'>
+                        Registrate
+                    </Link>
+        </h6>
+      </div>
+      <hr className='Line-separator-2ConfigPers' /> 
+      <div className='div-botones'>
+         <button onClick={signInWithGoogle} className='google-signin-button'>
           <FontAwesomeIcon icon={faGoogle} />
-          <span>Iniciar sesión con Google</span>
         </button>    
 
         <button onClick={signInWithGithub} className='google-signin-button'>
           <FontAwesomeIcon icon={faGithub} />
-          <span>Iniciar sesión con GitHub</span>
         </button>
 
         <button onClick={signInAnonimo} className='google-signin-button'>
           <FontAwesomeIcon icon={faUserSecret} />
-          <span>Iniciar sesión de forma anónima</span>
         </button>
-
-        <h4 className='form-title'> ¿No tienes cuenta?
-            <Link to='/Registro' className='button'>
-                Registrate
-            </Link>
-        </h4>
+      </div>
       </div>
     </>
     );
