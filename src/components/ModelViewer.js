@@ -70,25 +70,33 @@ const Model = ({ modelo, position }) => {
   return <primitive object={gltf.scene} />;
 };
 
-const ModelViewer = ({ modelo }) => {
-  return (
-    <Canvas
-      style={{ width: '100%', height: '45vh' }}
-      camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
-      gl={{ antialias: true }}
-      onCreated={({ gl }) => {
-        gl.toneMapping = THREE.ACESFilmicToneMapping;
-      }}
-    >
-      
-      <ambientLight intensity={4.0} />
-      <pointLight position={[10, 10, 10]} intensity={1.0} />
-      <CameraControls />
-      <Suspense fallback={null}>
-        <Model modelo={modelo} />
-      </Suspense>
-    </Canvas>
-  );
+const ModelViewer = ({ modelo, unlockState }) => {
+    if (unlockState) {
+      return(  
+        <Canvas
+        style={{ width: '100%', height: '45vh' }}
+        camera={{ position: [0, 2, -5] }} // Establece la posición de la cámara aquí
+        gl={{ antialias: true }}
+        onCreated={({ gl }) => {
+      gl.toneMapping = THREE.ACESFilmicToneMapping;
+    }}
+  >
+    
+    <ambientLight intensity={4.0} />
+    <pointLight position={[10, 10, 10]} intensity={1.0} />
+    <CameraControls />
+    <Suspense fallback={null}>
+      <Model modelo={modelo} />
+    </Suspense>
+  </Canvas>
+      )
+    }
+    else {
+      return(
+        <h1 
+        style={{ width: '100%', height: '45vh' }}>
+          Masocota no desbloqueada</h1>)
+    }
 };
 
 export default ModelViewer;
