@@ -10,8 +10,8 @@ body {
     height: 200px;
     margin-bottom: 0;
   }
- /* Formulario */
- .form-container {
+  /* Formulario */
+  .form-container {
     max-width: 400px;
     margin: 0 auto;
     margin-top: 0;
@@ -24,15 +24,15 @@ body {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  
-.Line-separator-2ConfigPers { 
-  width: 100%;
-  border: none;
-  border-top: 2px solid #313131;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  opacity: .70;
-}
+  /* Linea de separador */    
+  .Line-separator { 
+    width: 100%;
+    border: none;
+    border-top: 2px solid #313131;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    opacity: .70;
+  }
 
   .form-title {
     font-size: 30px;
@@ -41,13 +41,14 @@ body {
     margin-bottom: 0;
   }
   
-  /* Etiquetas */
+  /* label */
   .info-label {
     display: block;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
+  /* Input login */
   .input-field {
     width: 95%;
     padding: 10px;
@@ -68,6 +69,7 @@ body {
     transition: background-color 5000s ease-in-out 0s;
     background-color: #7be495;
   }
+  /* Fin input */
 
   /* enlace olvidar contraseña */
   .olvidar-contraseña{
