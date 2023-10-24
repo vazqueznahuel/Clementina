@@ -45,31 +45,33 @@ function Register(props) {
 
 
     return (
+    <>
+      <img src={img1} className='imagen-widi'/>  
+      <div className="form-container">
+        <h2 className='form-title'>Registrar</h2>
 
-    <div className="form-container">
-      <h2 className='form-title'>Registrar</h2>
+        <form onSubmit={functAutenticacion}>
 
-      <form onSubmit={functAutenticacion}>
+          <Label className="info-label" infoLabel="Ingrese email"/>
+          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
+                      
+          <Label className="info-label" infoLabel="Ingrese contraseña"/>
+          <input className='input-field' type='password' placeholder='Ingresar contraseña ' id='password'/>
+          
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+    
+          <button className='button'>Registrar</button>
+          
+        </form>
 
-        <Label className="info-label" infoLabel="Ingrese email"/>
-        <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
-                    
-        <Label className="info-label" infoLabel="Ingrese contraseña"/>
-        <input className='input-field' type='password' placeholder='Ingresar contraseña ' id='password'/>
-        
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-  
-        <button className='button'>Registrar</button>
-        
-      </form>
-
-      <h6 className=''> Ya tienes cuenta?
-          <Link to='/Login' className='link-enlace'>
-              Inicia Sesion
-          </Link>
-      </h6>
+        <h6 className=''> Ya tienes cuenta?
+            <Link to='/Login' className='link-enlace'>
+                Inicia Sesion
+            </Link>
+        </h6>
 
       </div>
+    </>
     );
     }
     export default Register;
