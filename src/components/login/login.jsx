@@ -74,7 +74,7 @@ function Login(props) {
       <div className='registro'>
         <h2 className='form-title'>Iniciar Sesion</h2>
       </div>
-      <hr className='Line-separator-2ConfigPers' />
+      <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
 
           <Label className="info-label" infoLabel="Email"/>
@@ -101,8 +101,8 @@ function Login(props) {
           </div>
           <button className='button'>Inicia Sesion</button>
         </form>
-      <div className='registro'>
-      <hr className='Line-separator-2ConfigPers' />
+      <div className='registro-enlace'>
+      <hr className='Line-separator' />
         <h6 className=''> ¿No tienes cuenta?
                     <Link to='/Registro' className='link-olvidar-contraseña'>
                         Registrate
