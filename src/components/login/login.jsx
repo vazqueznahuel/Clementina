@@ -89,7 +89,7 @@ function Login(props) {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {error ? 
             <h6 className='olvidar-contraseña-error'>
-              <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
+              <Link to='/Recuper-Contraseña' className='link-enlace'>
               ¿Olvidaste tu contraseña?
               </Link>
             </h6> : 
