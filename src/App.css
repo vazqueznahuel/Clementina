@@ -5,6 +5,7 @@ body {
     background-color: #55c595;
   }
 
+  /*----------- COMPONENTE LOGIN-----------*/
   .imagen-widi{
     width: 200px;
     height: 200px;
@@ -157,6 +158,9 @@ body {
   margin-right: 10px;
 }
 /* Fin botones de login */
+
+
+  /*----------- FIN COMPONENTE LOGIN-----------*/
 
 /* Menu hamburguesa */
 .hamburger {
