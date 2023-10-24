@@ -157,6 +157,7 @@ body {
   margin-right: 10px;
 }
 
+/* Menu hamburguesa */
 .hamburger {
   background-color: transparent;
   width: 30px;
@@ -232,3 +233,5 @@ body {
   background-color: #ffffff9c;
   border-radius: 4px;
 }
+
+/* Fin menu hamburguesa */
