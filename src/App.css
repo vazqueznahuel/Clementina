@@ -92,21 +92,21 @@ body {
 
   /* Fin olvidar contraseña */
  
-  /* Enlace registro */
-  .registro-enlace{
+  /* Div para centrar */
+  .div-center{
     display: flex;
     justify-content: center;
   }
 
-  .registro-enlace h6{
+  .div-center h6{
     margin: auto 1%;
     margin-bottom: 5%;
   }
   
-  .registro-enlace hr { 
+  .div-center hr { 
     width: 15%;
   }
-  /* Fin enlace registro */ 
+  /* Fin div para centrar */ 
 
 /* Botones */
 .div-botones{
