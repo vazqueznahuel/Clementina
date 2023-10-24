@@ -15,19 +15,21 @@ function Login(props) {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
+  const [error, setError] = useState("");
+
   const functAutenticacion = async (e) =>{  
       e.preventDefault();
       const correo = e.target.email.value;
       const contraseña = e.target.password.value;
        
-        try {
+      try {
           await signInWithEmailAndPassword(auth, correo, contraseña);
           navigate("/Home");
-        } catch (error) {
-          alert ("El correo es incorrecto");
-        }
-      
+      } catch (error) {
+          setError("El correo o la contraseña son incorrectos");
+      }
   }
+  
 
   const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
@@ -84,6 +86,8 @@ function Login(props) {
             <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
             <h6 className='olvidar-contraseña'>
               <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
               ¿Olvidaste tu contraseña?
