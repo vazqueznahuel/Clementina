@@ -93,13 +93,15 @@ function Login(props) {
           <button className='button'>Inicia Sesion</button>
         </form>
       <div className='registro'>
+      <hr className='Line-separator-2ConfigPers' />
         <h6 className=''> ¿No tienes cuenta?
                     <Link to='/Registro' className='link-olvidar-contraseña'>
                         Registrate
                     </Link>
         </h6>
-      </div>
       <hr className='Line-separator-2ConfigPers' /> 
+      </div>
+     
       <div className='div-botones'>
          <button onClick={signInWithGoogle} className='google-signin-button'>
           <FontAwesomeIcon icon={faGoogle} />
