@@ -63,11 +63,11 @@ function Register(props) {
         
       </form>
 
-      <h4 className='form-title'> Ya tienes cuenta?
-          <Link to='/Login' className='button'>
+      <h6 className=''> Ya tienes cuenta?
+          <Link to='/Login' className=''>
               Inicia Sesion
           </Link>
-      </h4>
+      </h6>
 
       </div>
     );
