@@ -48,7 +48,9 @@ function Register(props) {
     <>
       <img src={img1} className='imagen-widi'/>  
       <div className="form-container">
-        <h2 className='form-title'>Registrar</h2>
+        <div className='div-center'>
+          <h2 className='form-title'>Registrar</h2>
+        </div>
         <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
 
