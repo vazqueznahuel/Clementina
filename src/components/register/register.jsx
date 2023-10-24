@@ -58,6 +58,9 @@ function Register(props) {
           <Label className="info-label" infoLabel="Ingrese contraseña"/>
           <input className='input-field' type='password' placeholder='Ingresar contraseña ' id='password'/>
           
+          <Label className="info-label" infoLabel="Confirmar contraseña"/>
+          <input className='input-field' type='password' placeholder='Confirmar contraseña ' id='con-password'/>
+          
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     
           <button className='button'>Registrar</button>
