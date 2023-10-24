@@ -71,7 +71,7 @@ function Login(props) {
     <>
     <img src={img1} className='imagen-widi'/>
     <div className="form-container">
-      <div className='registro'>
+      <div className='div-center'>
         <h2 className='form-title'>Iniciar Sesion</h2>
       </div>
       <hr className='Line-separator' />
@@ -101,7 +101,7 @@ function Login(props) {
           </div>
           <button className='button'>Inicia Sesion</button>
         </form>
-      <div className='registro-enlace'>
+      <div className='div-center'>
       <hr className='Line-separator' />
         <h6 className=''> ¿No tienes cuenta?
                     <Link to='/Registro' className='link-enlace'>
