@@ -8,7 +8,7 @@ function App() {
     <div>
       <AppRouter />
     </div>
-  );
-}
+  )
+} 
 
 export default App;
