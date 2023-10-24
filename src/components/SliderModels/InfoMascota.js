@@ -7,7 +7,7 @@ const infoMascota = () => {
           title: 'Wi-di',
           school: 'EPET 20',
           description: 'Este es la mascota de la epet 20, te dice hola como estas, es cacheton',
-          unlock: false
+          unlock: true
         },
         {
           route: '/epet5.gltf',
