@@ -112,15 +112,15 @@ function Login(props) {
       </div>
      
       <div className='div-botones'>
-         <button onClick={signInWithGoogle} className='google-signin-button'>
+         <button onClick={signInWithGoogle} className='signin-button'>
           <FontAwesomeIcon icon={faGoogle} />
         </button>    
 
-        <button onClick={signInWithGithub} className='google-signin-button'>
+        <button onClick={signInWithGithub} className='signin-button'>
           <FontAwesomeIcon icon={faGithub} />
         </button>
 
-        <button onClick={signInAnonimo} className='google-signin-button'>
+        <button onClick={signInAnonimo} className='signin-button'>
           <FontAwesomeIcon icon={faUserSecret} />
         </button>
       </div>
