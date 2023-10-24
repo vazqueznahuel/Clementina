@@ -126,7 +126,7 @@ body {
   
   
   /* Estilos base para el botón */
-.google-signin-button {
+.signin-button {
   background-color: #005a59;
   color: #ffffff;
   border: none;
@@ -141,17 +141,17 @@ body {
 }
 
 /* Efecto de sombra al pasar el ratón */
-.google-signin-button:hover {
+.signin-button:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo de texto en el botón */
-.google-signin-button span {
+.signin-button span {
   padding: 0 10px;
 }
 
 /* Icono de Google */
-.google-signin-button i {
+.signin-button i {
   font-size: 20px;
   vertical-align: middle;
   margin-right: 10px;
