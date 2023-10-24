@@ -92,17 +92,17 @@ body {
   /* Fin olvidar contraseña */
  
   /* Enlace registro */
-  .registro{
+  .registro-enlace{
     display: flex;
     justify-content: center;
   }
 
-  .registro h6{
+  .registro-enlace h6{
     margin: auto 1%;
     margin-bottom: 5%;
   }
   
-  .registro hr { 
+  .registro-enlace hr { 
     width: 15%;
   }
   /* Fin enlace registro */ 
