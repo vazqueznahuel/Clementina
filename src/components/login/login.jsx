@@ -108,7 +108,7 @@ function Login(props) {
                         Registrate
                     </Link>
         </h6>
-      <hr className='Line-separator-2ConfigPers' /> 
+      <hr className='Line-separator' /> 
       </div>
      
       <div className='div-botones'>
