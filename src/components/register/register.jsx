@@ -16,6 +16,7 @@ function Register(props) {
       e.preventDefault();
       const correo = e.target.email.value;
       const contraseña = e.target.password.value;
+      const confirmarContraseña = e.target['con-password'].value;
       
       // Validación de la contraseña
     if (contraseña.length < 6) {
@@ -30,6 +31,11 @@ function Register(props) {
     
     if (!/[0-9]/.test(contraseña)) {
       setErrorMessage("La contraseña debe contener al menos un número");
+      return;
+    }
+    
+    if (contraseña !== confirmarContraseña) {
+      setErrorMessage("Las contraseñas no coinciden");
       return;
     }
     
