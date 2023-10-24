@@ -94,7 +94,7 @@ function Login(props) {
               </Link>
             </h6> : 
             <h6 className='olvidar-contraseña'>
-              <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
+              <Link to='/Recuper-Contraseña' className='link-enlace'>
               ¿Olvidaste tu contraseña?
               </Link>
             </h6>}
@@ -104,7 +104,7 @@ function Login(props) {
       <div className='registro-enlace'>
       <hr className='Line-separator' />
         <h6 className=''> ¿No tienes cuenta?
-                    <Link to='/Registro' className='link-olvidar-contraseña'>
+                    <Link to='/Registro' className='link-enlace'>
                         Registrate
                     </Link>
         </h6>

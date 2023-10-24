@@ -64,7 +64,7 @@ function Register(props) {
       </form>
 
       <h6 className=''> Ya tienes cuenta?
-          <Link to='/Login' className=''>
+          <Link to='/Login' className='link-enlace'>
               Inicia Sesion
           </Link>
       </h6>
