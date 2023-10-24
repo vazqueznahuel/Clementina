@@ -87,12 +87,17 @@ function Login(props) {
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
-
+            {error ? 
+            <h6 className='olvidar-contraseña-error'>
+              <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
+              ¿Olvidaste tu contraseña?
+              </Link>
+            </h6> : 
             <h6 className='olvidar-contraseña'>
               <Link to='/Recuper-Contraseña' className='link-olvidar-contraseña'>
               ¿Olvidaste tu contraseña?
               </Link>
-            </h6>
+            </h6>}
           </div>
           <button className='button'>Inicia Sesion</button>
         </form>
