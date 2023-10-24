@@ -49,7 +49,7 @@ function Register(props) {
       <img src={img1} className='imagen-widi'/>  
       <div className="form-container">
         <h2 className='form-title'>Registrar</h2>
-
+        <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
 
           <Label className="info-label" infoLabel="Ingrese email"/>
