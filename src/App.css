@@ -6,8 +6,8 @@ body {
   }
 
   .imagen-widi{
-    width: 190px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 0;
   }
  /* Formulario */
@@ -79,6 +79,7 @@ body {
 
   .olvidar-contraseña-error{
     margin-top: -15px;
+    margin-bottom: -1px;
     position: relative;
     left: 36%;
   }
