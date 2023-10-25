@@ -12,7 +12,8 @@ function Main() {
         <div>
             <Navbar/>
             <Window/>
-            <Button text = "Haz clic en mí" onClick = { handleClick }/>
+            <Button text = "Escanear QR" onClick = { handleClick }/>
+            <Button text = "Icon"onClick = { handleClick }/>
         </div>
     );
 }
