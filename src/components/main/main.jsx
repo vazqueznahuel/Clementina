@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Button from './Button';
+import Button from '../button/button';
 
-function App() {
+function Main() {
     const handleClick = () => {
         alert('El botón fue clickeado');
     };
@@ -12,4 +12,4 @@ function App() {
     );
 }
 
-export default App;
+export default Main;
