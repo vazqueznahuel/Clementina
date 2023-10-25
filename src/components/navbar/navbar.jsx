@@ -9,7 +9,7 @@ function Navbar() {
             {/* el link redirigiria al perfil de usuario, es decir, si toco la foto
             de perfil me deberia llevar al perfil del usuario.
             Esa imagen la puse para probar pero obvio iria una que elija el usuario */}
-          <a href="/"><img src={imagen1} height={90} width={90}/></a>
+          <a href="/"><img src={imagen1} height={90} width={90} style={{ borderRadius: '50%' }}/></a>
         </li>
         <li className="nav-item">
             {/* nombre del usuario */}
