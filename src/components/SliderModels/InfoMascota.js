@@ -32,16 +32,16 @@ const infoMascota = () => {
         },
         {
           route: '/epet3.gltf',
-          title: 'Jeison',
+          title: 'Recipablo',
           school: 'EPET 3',
-          description: 'El era un muercielago normal y feliz hasta que le agarro cancer de oreja y se la reemplazaron por antenas de router',
+          description: 'Una vuelta un loco desquisiado agarro una planta, le puso un foco y lo metio en el cuerpo de un robot para que pudiera controlarlo y salio esta abominacion, vive gracias a energias renovables como la luz del sol',
           unlock: true
         },
         {
           route: '/epet17.gltf',
-          title: 'Jeison',
+          title: 'el "Gato"',
           school: 'EPET 17',
-          description: 'El era un muercielago normal y feliz hasta que le agarro cancer de oreja y se la reemplazaron por antenas de router',
+          description: 'Le gustan las chatas al piso, la musica fuerte y los fierros, preguntale lo que sea de auto que se re maneja, pero no le preguntes que paso el sabado porque no se acuerda',
           unlock: true
         }
       ]

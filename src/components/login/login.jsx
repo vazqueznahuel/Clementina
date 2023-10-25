@@ -6,7 +6,7 @@ import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEye, faEyeSlash, faUserSecret  } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import appFirebase from '../../firebase/firebaseConfig.js'
-import img1 from '../../Imagenes/img1.png';
+import img1 from '../../imagenes/img1.png'
 import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signInAnonymously } from 'firebase/auth'
 const auth = getAuth(appFirebase);
 
