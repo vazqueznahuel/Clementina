@@ -1,4 +1,3 @@
-// src/Button.js
 import React from 'react';
 
 function Button({ text, onClick }) {

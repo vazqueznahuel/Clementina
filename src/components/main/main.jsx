@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../button/button';
+import navbar from '../navbar/navbar';
 
 function Main() {
     const handleClick = () => {
@@ -7,8 +8,9 @@ function Main() {
     };
 
     return (
-        <div><h1> My React App </h1>
-        <Button text = "Haz clic en mí" onClick = { handleClick }/> </div>
+        <div>
+        <Button text = "Haz clic en mí" onClick = { handleClick }/>
+        </div>
     );
 }
 
