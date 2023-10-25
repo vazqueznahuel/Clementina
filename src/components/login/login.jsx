@@ -74,7 +74,6 @@ function Login(props) {
       <div className='div-center'>
         <h2 className='form-title'>Iniciar Sesion</h2>
       </div>
-      <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
 
           <Label className="info-label" infoLabel="Email"/>
