@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../button/button';
-import navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar';
 
 function Main() {
     const handleClick = () => {
@@ -9,7 +9,8 @@ function Main() {
 
     return (
         <div>
-        <Button text = "Haz clic en mí" onClick = { handleClick }/>
+            <Navbar/>
+            <Button text = "Haz clic en mí" onClick = { handleClick }/>
         </div>
     );
 }
