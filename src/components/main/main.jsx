@@ -14,7 +14,6 @@ function Main() {
             <Navbar/>
             <Window/>
             <Button text = "Escanear QR" onClick = { handleClick }/>
-            <Button text = "Icon"onClick = { handleClick }/>
         </div>
     );
 }
