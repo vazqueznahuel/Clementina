@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '../button/button';
 import Navbar from '../navbar/navbar';
 import Window from '../window/window';
+import '../../css/main.css'
 
 function Main() {
     const handleClick = () => {
@@ -9,7 +10,7 @@ function Main() {
     };
 
     return (
-        <div>
+        <div className='main'>
             <Navbar/>
             <Window/>
             <Button text = "Escanear QR" onClick = { handleClick }/>
