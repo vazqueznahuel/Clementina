@@ -6,7 +6,17 @@
 
 /* Navbar.css */
 
+.fotoUsuario {
+    width: 8rem;
+    border-radius: 50%;
+}
+
+.menuHamburguesa {
+    width: 3rem;
+}
+
 .navbar {
+    width: 100%;
     background-color: rgb(152, 243, 213);
     color: #fff;
     padding: 1rem;
