@@ -3,6 +3,7 @@ import React from "react";
 const infoMascota = () => { 
     const mascota = [
         {
+          id:'0',
           route: '/widiModelo.gltf',
           title: 'Wi-di',
           school: 'EPET 20',
@@ -10,6 +11,7 @@ const infoMascota = () => {
           unlock: true
         },
         {
+          id:'1',
           route: '/epet5.gltf',
           title: 'Calamaria',
           school: 'EPET 5',
@@ -17,6 +19,7 @@ const infoMascota = () => {
           unlock: true
         },
         {
+          id:'2',
           route: '/epet8.gltf',
           title: 'Dozer',
           school: 'EPET 8',
@@ -24,6 +27,7 @@ const infoMascota = () => {
           unlock: true
         },
         {
+          id:'3',
           route: '/epet6.gltf', 
           title: 'Jeison',
           school: 'EPET 6',
@@ -31,6 +35,7 @@ const infoMascota = () => {
           unlock: true
         },
         {
+          id:'4',
           route: '/epet3.gltf',
           title: 'Recipablo',
           school: 'EPET 3',
@@ -38,6 +43,7 @@ const infoMascota = () => {
           unlock: true
         },
         {
+          id:'5',
           route: '/epet17.gltf',
           title: 'el "Gato"',
           school: 'EPET 17',
