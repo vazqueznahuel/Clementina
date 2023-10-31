@@ -8,6 +8,8 @@ import Register from '../components/register/register';
 
 import appFirebase from '../firebase/firebaseConfig';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import ResetPassword from '../components/resetPassword/resetPassword';
+import Main from '../components/main/main';
 
 const auth = getAuth(appFirebase);
 
@@ -30,11 +32,13 @@ const auth = getAuth(appFirebase);
           <Route
             exact
             path="/"
-            element={ isAuthenticated ? <Navigate to="/Home" /> : <Login/> }
+            element={ isAuthenticated ? <Navigate to="/Main" /> : <Login/> }
           />
           <Route path='/Registro' element={<Register/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Home' element={<Home/>}/>
+          <Route path='/Recuper-Contraseña' element={<ResetPassword/>}/>
+          <Route path='/Main' element={<Main/>}/>
         </Routes>
       </Router>
       </>    

@@ -24,7 +24,7 @@ function Login(props) {
        
       try {
           await signInWithEmailAndPassword(auth, correo, contraseña);
-          navigate("/Home");
+          navigate("/Main");
       } catch (error) {
           setError("El correo o la contraseña son incorrectos");
       }
@@ -36,7 +36,7 @@ function Login(props) {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result.user);  // Puedes acceder a la información del usuario aquí
-        navigate("/Home");
+        navigate("/Main");
       }).catch((error) => {
         console.log(error.message);
       });
@@ -47,7 +47,7 @@ function Login(props) {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result.user);  // Puedes acceder a la información del usuario aquí
-        navigate("/Home");
+        navigate("/Main");
       }).catch((error) => {
         console.log(error.message);
       });
@@ -56,7 +56,7 @@ function Login(props) {
   const signInAnonimo = () => {
     signInAnonymously(auth)
       .then(() => {
-        navigate("/Home");
+        navigate("/Main");
       })
       .catch((error) => {
         console.error(error);
