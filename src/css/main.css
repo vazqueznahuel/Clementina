@@ -1,0 +1,83 @@
+.main {
+    background-color: rgb(243, 216, 181);
+    padding-bottom: 2rem;
+}
+
+
+/* Navbar.css */
+
+.fotoUsuario {
+    width: 8rem;
+    border-radius: 50%;
+}
+
+.menuHamburguesa {
+    width: 3rem;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgb(152, 243, 213);
+    color: #fff;
+    padding: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.nav-link:hover {
+    color: #005A59;
+}
+
+
+/* window.css */
+
+.window {
+    display: flex;
+    justify-content: center;
+}
+
+.mascota {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 5);
+}
+
+
+/* botones.css */
+
+.escanear {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.boton-escanear {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px 65px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    font-size: 16px;
+}
+
+.boton-escanear:hover {
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+    transform: scale(1.05);
+}
