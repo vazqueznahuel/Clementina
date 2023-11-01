@@ -1,5 +1,5 @@
 import React from 'react';
-import imagen1 from '../../Imagenes/menu-svgrepo-com.svg'
+import imagen1 from '../../imagenes/imagen1.jpeg'
 import '../../css/main.css'
 
 function Navbar() {
