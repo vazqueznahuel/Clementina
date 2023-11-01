@@ -5,7 +5,7 @@ import Epet5qr from './components/generateqr/epet5qr'
 import Epet6qr from './components/generateqr/epet6qr'
 import Epet8qr from './components/generateqr/epet8qr'
 import Epet14qr from './components/generateqr/epet14qr'
-import Epet8qr from './components/generateqr/epet6qr'
+import Epet17qr from './components/generateqr/epet17qr'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Epet6qr/>
             <Epet8qr/>
             <Epet14qr/>
-            <Epet8qr/>
+            <Epet17qr/>
         </div>
     )
 }
