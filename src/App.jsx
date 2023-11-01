@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import AppRouter from './routes/routes'
-import MyQRCodeComponent from './components/generateqr/generateqr'
+import Epet3qr from './components/generateqr/epet3qr'
 
 function App() {
 
     return ( 
         <div>
             <AppRouter/>
-            <MyQRCodeComponent/>
+            <Epet3qr/>
         </div>
     )
 }
