@@ -1,11 +1,11 @@
 import React from 'react';
-import imagen1 from '../../imagenes/imagen1.jpeg'
+import img1 from '../../Imagenes/imagen1.jpeg'
 import '../../css/main.css'
 
-function Window({ imagenUrl={imagen1}}) {
+function Window({ imagenUrl={img1}}) {
   return (
     <div className="window">
-      <img className='mascota' src={imagen1} alt="Mascota E-pet" width={300} height={300} style={{borderRadius: '50%'}} />
+      <img className='mascota' src={img1} alt="Mascota E-pet" width={300} height={300} style={{borderRadius: '50%'}} />
     </div>
   );
 }
