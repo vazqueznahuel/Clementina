@@ -3,6 +3,8 @@ import AppRouter from './routes/routes'
 import Epet3qr from './components/generateqr/epet3qr'
 import Epet5qr from './components/generateqr/epet5qr'
 import Epet6qr from './components/generateqr/epet6qr'
+import Epet8qr from './components/generateqr/epet6qr'
+
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
             <Epet3qr/>
             <Epet5qr/>
             <Epet6qr/>
+            <Epet8qr/>
         </div>
     )
 }
