@@ -43,7 +43,7 @@ function Register(props) {
     try {
         await createUserWithEmailAndPassword(auth, correo, contraseña);  
         alert("Registradoo!!") 
-        navigate("/Home");
+        navigate("/Main");
       } catch (error) {
         setErrorMessage("Hubo un error inesperado, por favor intente más tarde")        
       }
