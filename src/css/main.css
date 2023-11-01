@@ -1,5 +1,6 @@
 .main {
     margin: 0;
+    padding: 0%;
     background-color: rgb(243, 216, 181);
     padding-bottom: 2rem;
 
@@ -9,7 +10,7 @@
 /* Navbar.css */
 
 .fotoUsuario {
-    width: 8rem;
+    max-width: 5rem;
     border-radius: 50%;
 }
 
