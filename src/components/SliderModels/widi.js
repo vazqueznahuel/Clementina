@@ -34,7 +34,8 @@ function FirstModel() {
   
 
   return (
-    <div style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
+    <div className='cont-widi'>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.210324494949!2d-68.09031262461434!3d-38.964865200698085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33b795c819a7%3A0x65c00b69eb2c3f1d!2sE.P.E.T.N%C2%B0%2020!5e0!3m2!1ses!2sar!4v1698933368264!5m2!1ses!2sar" className='mapa' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       {isUnlocked ? (
         <>
           <ModelViewer modelo={firstModel.route} unlockState={firstModel.unlock} />
