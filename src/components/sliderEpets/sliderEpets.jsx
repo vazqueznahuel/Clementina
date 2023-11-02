@@ -8,7 +8,7 @@ function SliderEpets() {
     return (
         <div className='sliderEpet'>
             {mascota.map((mascota, index) => (
-                    <Icon key={index} nombre={mascota.title}/>
+                    <Icon key={index} nombre={mascota.title} id={mascota.id}/>
                 ))}
         </div>
     );
