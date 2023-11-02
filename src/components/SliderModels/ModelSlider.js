@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 function ModelSlider() {
   const {id} = useParams();
-  const modelPosition = id;
+  const modelPosition = parseInt(id, 10);
   const mascota = infoMascota();
   const numModels = mascota.length;
   const [sliderPosition, setSliderPosition] = useState(modelPosition);
