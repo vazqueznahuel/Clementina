@@ -1,33 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModelViewer from './ModelViewer';
 import Info from './modelDescription';
 import infoMascota from './InfoMascota';
+import { useParams } from 'react-router-dom';
 
 function ModelSlider() {
+  const {id} = useParams();
+  const modelPosition = id;
   const mascota = infoMascota();
   const numModels = mascota.length;
-
-  const [sliderPosition, setSliderPosition] = useState(0);
-  const [currentInfoIndex, setCurrentInfoIndex] = useState(0);
+  const [sliderPosition, setSliderPosition] = useState(modelPosition);
+  const [currentInfoIndex, setCurrentInfoIndex] = useState(modelPosition);
 
   const movementLimit = 1 / numModels;
 
+  useEffect(() => {
+    // Actualizar el sliderPosition y currentInfoIndex cuando modelPosition cambia
+    setSliderPosition(modelPosition);
+    setCurrentInfoIndex(modelPosition);
+  }, [modelPosition]);
+
   const handlePrevClick = () => {
     if (currentInfoIndex > 0) {
-      setSliderPosition(sliderPosition - movementLimit);
+      setSliderPosition(currentInfoIndex - 1);
       setCurrentInfoIndex(currentInfoIndex - 1);
     }
   };
 
   const handleNextClick = () => {
     if (currentInfoIndex < numModels - 1) {
-      setSliderPosition(sliderPosition + movementLimit);
+      setSliderPosition(currentInfoIndex + 1);
       setCurrentInfoIndex(currentInfoIndex + 1);
     }
   };
 
   const getModelViewerStyle = {
-    transform: `translateX(-${sliderPosition * 100}%)`,
+    transform: `translateX(-${sliderPosition * (100 / numModels)}%)`,
     transition: 'transform 0.5s ease-in-out',
     display: 'flex',
   };
