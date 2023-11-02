@@ -71,7 +71,7 @@
 .boton-escanear {
     background-color: #205072;
     color: #fff;
-    border: 2px solid #007bff;
+    border: 2px solid #1c4e72;
     border-radius: 60px;
     padding: 10px 65px;
     cursor: pointer;
@@ -80,7 +80,7 @@
 }
 
 .boton-escanear:hover {
-    background-color: #2a8be6;
+    background-color: #329d9c;
     border: 2px solid #0056b3;
     transform: scale(1.05);
 }
