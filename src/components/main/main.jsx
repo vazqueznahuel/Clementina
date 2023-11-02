@@ -3,7 +3,6 @@ import Button from '../button/button';
 import Navbar from '../navbar/navbar';
 import Window from '../window/window';
 import SliderEpets from '../sliderEpets/sliderEpets';
-import FirstModel from '../SliderModels/widi';
 import '../../css/main.css'
 import { getAuth, signOut } from 'firebase/auth';
 import appFirebase from '../../firebase/firebaseConfig.js'
