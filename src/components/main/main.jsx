@@ -5,7 +5,7 @@ import Window from '../window/window';
 import SliderEpets from '../sliderEpets/sliderEpets';
 import FirstModel from '../SliderModels/widi';
 import '../../css/main.css'
-import { getAuth } from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getFirestore } from 'firebase/firestore';
 
