@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
-import Label from '../label/label.jsx'
-import '../../App.css'
+import React, { useState } from 'react';
+import Label from '../label/label.jsx';
+import '../../App.css';
 import { Link, useNavigate } from 'react-router-dom';
-// import img1 from '../../imagenes/img1.png';
-import img1 from '../../Imagenes/img1.png'
+import img1 from '../../Imagenes/img1.png';
 import appFirebase from '../../firebase/firebaseConfig.js';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-const auth = getAuth(appFirebase);
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { doc, setDoc } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore";
 
+const auth = getAuth(appFirebase);
+const db = getFirestore(appFirebase);
 
 function Register(props) {
   const navigate = useNavigate();
@@ -18,7 +20,10 @@ function Register(props) {
       const correo = e.target.email.value;
       const contraseña = e.target.password.value;
       const confirmarContraseña = e.target['con-password'].value;
-      
+      const nombre = e.target.nombre.value;
+      const apellido = e.target.apellido.value;
+      const dni = e.target.dni.value;
+
       // Validación de la contraseña
     if (contraseña.length < 6) {
       setErrorMessage("La contraseña debe tener al menos 6 caracteres");
@@ -41,9 +46,17 @@ function Register(props) {
     }
     
     try {
-        await createUserWithEmailAndPassword(auth, correo, contraseña);  
+        const userCredential = await createUserWithEmailAndPassword(auth, correo, contraseña);  
         alert("Registradoo!!") 
         navigate("/Main");
+
+        // Guardar el nombre, apellido y DNI en la base de datos
+        await setDoc(doc(db, "users", userCredential.user.uid), {
+          nombre: nombre,
+          apellido: apellido,
+          dni: dni
+        });
+        
       } catch (error) {
         setErrorMessage("Hubo un error inesperado, por favor intente más tarde")        
       }
@@ -60,6 +73,15 @@ function Register(props) {
         </div>
         <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
+
+          <Label className="info-label" infoLabel="Ingrese nombre"/>
+          <input className='input-field' type='text' placeholder='Ingresar nombre' id='nombre'/>
+
+          <Label className="info-label" infoLabel="Ingrese apellido"/>
+          <input className='input-field' type='text' placeholder='Ingresar apellido' id='apellido'/>
+
+          <Label className="info-label" infoLabel="Ingrese DNI"/>
+          <input className='input-field' type='text' placeholder='Ingresar DNI' id='dni'/>
 
           <Label className="info-label" infoLabel="Ingrese email"/>
           <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>

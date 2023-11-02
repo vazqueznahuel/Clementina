@@ -10,6 +10,7 @@ import appFirebase from '../firebase/firebaseConfig';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import ResetPassword from '../components/resetPassword/resetPassword';
 import Main from '../components/main/main';
+import FirstModel from '../components/SliderModels/widi';
 
 const auth = getAuth(appFirebase);
 
@@ -39,6 +40,7 @@ const auth = getAuth(appFirebase);
           <Route path='/Home' element={<Home/>}/>
           <Route path='/Recuper-Contraseña' element={<ResetPassword/>}/>
           <Route path='/Main' element={<Main/>}/>
+          <Route path='/EPET 20' element={<FirstModel/>}/>
         </Routes>
       </Router>
       </>    
