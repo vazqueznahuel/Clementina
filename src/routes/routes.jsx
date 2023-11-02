@@ -44,7 +44,8 @@ const auth = getAuth(appFirebase);
           <Route path='/Main' element={<Main/>}/>
           <Route path='/Wi-di' element={<FirstModel/>}/>
           <Route path='/Calamaria' element={<Calamaria/>}/>
-          <Route path='/ModelSlider' element={<ModelSlider/>}/>
+          <Route path="/ModelSlider/:id" element={<ModelSlider />} />
+
 
         </Routes>
       </Router>
