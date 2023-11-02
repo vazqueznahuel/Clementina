@@ -1,8 +1,8 @@
 .sliderEpet {
     width: 100%;
     padding: 2rem;
-    background-color: darkgoldenrod;
-    border-top: 2px solid #000;
+    background-color: #56c596;
+    border-top: 2px solid #42a37b;
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
     grid-template-rows: 2fr 2fr;
@@ -15,14 +15,13 @@
 
 .img {
     width: 75%;
-    border: 2px solid #000;
-    border-radius: 10px;
+    border: 2px solid #329d9c;
+    border-radius: 90%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, transform 0.5s;
 }
 
 .img:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    transform: scale(1.20);
 }
