@@ -11,6 +11,8 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import ResetPassword from '../components/resetPassword/resetPassword';
 import Main from '../components/main/main';
 import FirstModel from '../components/SliderModels/widi';
+import Calamaria from '../components/SliderModels/calamaria';
+import ModelSlider from '../components/SliderModels/ModelSlider';
 
 const auth = getAuth(appFirebase);
 
@@ -41,6 +43,9 @@ const auth = getAuth(appFirebase);
           <Route path='/Recuper-Contraseña' element={<ResetPassword/>}/>
           <Route path='/Main' element={<Main/>}/>
           <Route path='/Wi-di' element={<FirstModel/>}/>
+          <Route path='/Calamaria' element={<Calamaria/>}/>
+          <Route path='/ModelSlider' element={<ModelSlider/>}/>
+
         </Routes>
       </Router>
       </>    

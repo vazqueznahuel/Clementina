@@ -10,7 +10,6 @@ function ModelSlider() {
   const [sliderPosition, setSliderPosition] = useState(0);
   const [currentInfoIndex, setCurrentInfoIndex] = useState(0);
 
-  const sliderLimit = 5 / 6;
   const movementLimit = 1 / numModels;
 
   const handlePrevClick = () => {

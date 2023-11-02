@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import img1 from '../../imagenes/imagen1.jpeg'
+import img1 from '../../Imagenes/imagen1.jpeg'
 import '../../css/main.css'
 import Nav from '../nav/nav';
 import { getAuth } from 'firebase/auth';
