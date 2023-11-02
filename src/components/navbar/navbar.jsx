@@ -38,7 +38,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul className="nav-list">
-        <li className="nav-item">
+        <li className="nav-ftUsuario">
             {/* el link redirigiria al perfil de usuario, es decir, si toco la foto
             de perfil me deberia llevar al perfil del usuario.
             Esa imagen la puse para probar pero obvio iria una que elija el usuario */}
