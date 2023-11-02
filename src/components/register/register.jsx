@@ -54,7 +54,8 @@ function Register(props) {
         await setDoc(doc(db, "users", userCredential.user.uid), {
           nombre: nombre,
           apellido: apellido,
-          dni: dni
+          dni: dni,
+          FirstModel: false
         });
         
       } catch (error) {

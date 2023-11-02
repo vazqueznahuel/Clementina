@@ -40,7 +40,7 @@ const auth = getAuth(appFirebase);
           <Route path='/Home' element={<Home/>}/>
           <Route path='/Recuper-Contraseña' element={<ResetPassword/>}/>
           <Route path='/Main' element={<Main/>}/>
-          <Route path='/EPET 20' element={<FirstModel/>}/>
+          <Route path='/Wi-di' element={<FirstModel/>}/>
         </Routes>
       </Router>
       </>    

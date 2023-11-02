@@ -6,7 +6,7 @@ function Icon({nombre}) {
     return (
         <div className='icon'>
             <div className="epets">
-                <a href="mascotas" className='nav-epets'><img className='img' src={img1}/></a>
+                <a href={nombre} className='nav-epets'><img className='img' src={img1}/></a>
                 <p className='nameEpets'>{nombre}</p>
             </div>
         </div>

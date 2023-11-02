@@ -13,19 +13,25 @@ function FirstModel() {
   const mascota = infoMascota();
   const firstModel = mascota[0];
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    if (auth.currentUser) {
-      const userRef = doc(db, 'users', auth.currentUser.uid);
-
-      // Obtener el estado de desbloqueo del personaje
-      getDoc(userRef).then((docSnap) => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      setUser(user);
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           setIsUnlocked(docSnap.data().FirstModel);
+        } else {
+          console.log("No such document!");
         }
-      });
-    }
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
+  
 
   return (
     <div style={{ height: '100vh', overflow: 'hidden', position: 'relative' }}>
@@ -39,7 +45,7 @@ function FirstModel() {
           />
         </>
       ) : (
-        <p>Este personaje está bloqueado.</p>
+        <p>Este personaje está bloqueadoooo.</p>
       )}
     </div>
   );
