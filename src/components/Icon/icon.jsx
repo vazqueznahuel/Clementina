@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import img1 from '../../Imagenes/imagen1.jpeg'
+import img1 from '../../imagenes/imagen1.jpeg'
 import '../../css/sliderEpets.css'
 
 function Icon({nombre}) {

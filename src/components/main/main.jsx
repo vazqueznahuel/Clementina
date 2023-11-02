@@ -19,9 +19,6 @@ function Main() {
 
     return (
         <div className='main'>
-            <button onClick={() => {
-                    signOut(auth);
-                }}>Cerrar Sesion</button>
             <Navbar/>
             <Window/>
             <Button text = "Escanear QR" onClick = { handleClick }/>
