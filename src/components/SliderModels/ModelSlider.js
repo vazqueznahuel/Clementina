@@ -3,11 +3,49 @@ import ModelViewer from './ModelViewer';
 import Info from './modelDescription';
 import infoMascota from './InfoMascota';
 import { useParams } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
+import appFirebase from '../../firebase/firebaseConfig.js'
+import { doc, getDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
+const auth = getAuth(appFirebase);
+const db = getFirestore(appFirebase);
 
 function ModelSlider() {
+  const [user, setUser] = useState(null);
+  const [widi, setWidi] = useState("");
+  const [calamaria, setCalamaria] = useState("");
+  const [dozer, setDozer] = useState("");
+  const [jeison, setJeison] = useState("");
+  const [recipablo, setRecipablo] = useState("");
+  const [gato, setGato] = useState("");
+  const [anguila, setAnguila] = useState("");
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      setUser(user);
+      if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setWidi(docSnap.data().Widi);
+          setCalamaria(docSnap.data().Calamaria);
+          setDozer(docSnap.data().Dozer);
+          setJeison(docSnap.data().Jeison);
+          setRecipablo(docSnap.data().Recipablo);
+          setGato(docSnap.data().Gato);
+          setAnguila(docSnap.data().Anguila);
+        } else {
+          console.log("No such document!");
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const {id} = useParams();
   const modelPosition = parseInt(id, 10);
-  const mascota = infoMascota();
+  const mascota = infoMascota(widi, calamaria, dozer, jeison, recipablo, gato, anguila);
   const numModels = mascota.length;
   const [sliderPosition, setSliderPosition] = useState(modelPosition);
   const [currentInfoIndex, setCurrentInfoIndex] = useState(modelPosition);
@@ -55,6 +93,7 @@ function ModelSlider() {
         title={mascota[currentInfoIndex].title}
         school={mascota[currentInfoIndex].school}
         description={mascota[currentInfoIndex].description}
+        unlockState={mascota[currentInfoIndex].unlock}
       />
     </div>
   );
