@@ -95,7 +95,7 @@ const ModelViewer = ({ modelo, unlockState }) => {
       return(
         <h1 
         style={{ width: '100%', height: '45vh' }}>
-          Masocota no desbloqueada</h1>)
+          Mascota no desbloqueada</h1>)
     }
 };
 
