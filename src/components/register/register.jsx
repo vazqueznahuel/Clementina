@@ -55,8 +55,13 @@ function Register(props) {
           nombre: nombre,
           apellido: apellido,
           dni: dni,
-          FirstModel: true,
-          Calamaria: true
+          Widi: false,
+          Calamaria: false,
+          Dozer: false,
+          Jeison: false,
+          Recipablo: false,
+          Gato: false,
+          Anguila:false 
         });
         
       } catch (error) {
