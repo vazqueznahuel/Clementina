@@ -7,6 +7,8 @@ import '../../css/main.css'
 import { getAuth, signOut } from 'firebase/auth';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import { getFirestore, updateDoc, getDoc, doc } from 'firebase/firestore';
+import QrReader from 'react-qr-scanner';
+import QRCode from 'react-qr-code';
 
 const auth = getAuth(appFirebase);
 const db = getFirestore(appFirebase);
@@ -46,15 +48,43 @@ function Main() {
       });
     }
 
+    const [result, setResult] = useState('No result');
+
+    const handleScan = async (data) => {
+      if (data) {
+        const docRef = doc(db, "users", user.uid);
+        await updateDoc(docRef, {
+          [data]: true
+        });
+        setResult(data);
+      }
+    }
+
+    const handleError = (err) => {
+      console.error(err)
+    }
+
+    const previewStyle = {
+      height: 240,
+      width: 320,
+    }
+  
     return (
         <div className='main'>
             <Navbar/>
             <Window/>
-            <Button text = "Escanear QR" onClick = { handleClick }/>
+            <QrReader
+              delay={100}
+              style={previewStyle}
+              onError={handleError}
+              onScan={handleScan}
+            />
+            <p>{result}</p>
             <SliderEpets/>
             <button onClick={toggleWidi}>
                 {widi ? 'Desactivar Widi' : 'Activar Widi'}
             </button>
+            <QRCode value="Widi" />
         </div>
     );
 }
