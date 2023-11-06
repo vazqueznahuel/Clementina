@@ -20,6 +20,8 @@ function Main() {
 
     const [widi, setWidi] = useState(false);
     const [user, setUser] = useState(null);
+    const [cameraActive, setCameraActive] = useState(false);
+
   
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -68,18 +70,31 @@ function Main() {
       height: 240,
       width: 320,
     }
+
+    const startCamera = () => {
+      setCameraActive(true);
+    };
+    
+    const stopCamera = () => {
+      setCameraActive(false);
+    };
+    
   
     return (
         <div className='main'>
             <Navbar/>
             <Window/>
-            <QrReader
-              delay={100}
-              style={previewStyle}
-              onError={handleError}
-              onScan={handleScan}
-            />
+            {cameraActive ? (
+              <QrReader
+                delay={100}
+                style={previewStyle}
+                onError={handleError}
+                onScan={handleScan}
+              />
+            ) : null} 
             <p>{result}</p>
+            <button onClick={startCamera}>Activar cámara</button>
+            <button onClick={stopCamera}>Desactivar cámara</button>
             <SliderEpets/>
             <button onClick={toggleWidi}>
                 {widi ? 'Desactivar Widi' : 'Activar Widi'}
