@@ -19,7 +19,6 @@ function Main() {
   const [widi, setWidi] = useState(false);
   const [user, setUser] = useState(null);
   const [cameraActive, setCameraActive] = useState(false);
-  const [result, setResult] = useState('No result');
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -49,12 +48,13 @@ function Main() {
   };
 
   const handleScan = async (data) => {
-    if (data) {
+    if (data) { // Verificar si se escaneó algo antes de actualizar
       const docRef = doc(db, 'users', user.uid);
       await updateDoc(docRef, {
-        [data]: true,
+        Widi: true,
       });
-      setResult(data);
+      console.log("seescanei")
+      setCameraActive(false); // Desactivar la cámara después de escanear
     }
   };
 
@@ -94,7 +94,6 @@ function Main() {
           style={{ width: '100%', height: 'auto' }}
         ></video>
       )}
-      <p>{result}</p>
       <button onClick={startCamera}>Activar cámara</button>
       <button onClick={stopCamera}>Desactivar cámara</button>
       <SliderEpets />
