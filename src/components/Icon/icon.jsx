@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import img1 from '../../Imagenes/imagen1.jpg'
 import '../../css/sliderEpets.css'
 
 function Icon({nombre, id}) {
@@ -7,7 +8,7 @@ function Icon({nombre, id}) {
         <div className='icon'>
             <div className="epets">
             <Link to={`/ModelSlider/${id}`} className="nav-epets">
-          <div className='itemIcon'></div>
+          <img className="img" src={img1} alt="Icono" />
         </Link>
                 <p className='nameEpets'>{nombre}</p>
             </div>

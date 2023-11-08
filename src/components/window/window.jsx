@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../../imagenes/img1.png'
+import img1 from '../../Imagenes/img1.png'
 import '../../css/main.css'
 
 function Window({ imagenUrl={img1}}) {
