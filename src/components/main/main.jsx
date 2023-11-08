@@ -42,7 +42,7 @@ function Main() {
   
       const docRef = doc(db, "users", user.uid);
       await updateDoc(docRef, {
-        Widi: newValue
+        Dozer: newValue
       });
     }
 
