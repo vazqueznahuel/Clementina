@@ -15,7 +15,7 @@ function ResetPassword() {
   };
 
   return (
-    <div>
+    <div className="resetP">
       <input
         type="email"
         placeholder="Correo electrónico"
