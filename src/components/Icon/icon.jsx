@@ -8,7 +8,7 @@ function Icon({nombre, id}) {
         <div className='icon'>
             <div className="epets">
             <Link to={`/ModelSlider/${id}`} className="nav-epets">
-          <img className="img" src={img1} alt="Icono" />
+          <div className='itemIcon'></div>
         </Link>
                 <p className='nameEpets'>{nombre}</p>
             </div>
