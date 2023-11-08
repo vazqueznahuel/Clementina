@@ -263,4 +263,5 @@ body {
 
 .resetP {
   display: flex;
+  flex-direction: column;
 }
