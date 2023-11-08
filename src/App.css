@@ -220,8 +220,6 @@ body {
   border-radius: 4px;
 }
 
-
-
 .menuppal li button {
   display: block;
   padding: 10px;
@@ -261,4 +259,8 @@ body {
   position: 'relative';
   display: flex;
   justify-content: left; 
+}
+
+.resetP {
+  display: flex;
 }
