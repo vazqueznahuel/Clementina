@@ -307,5 +307,8 @@ input:-webkit-autofill {
   background-color: #005a59;
   color: #fff;
   text-decoration: none;
+}
 
+.resetP button:hover {
+  opacity:1;
 }
