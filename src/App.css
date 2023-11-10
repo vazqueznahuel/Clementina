@@ -305,5 +305,7 @@ input:-webkit-autofill {
   border-radius: 20px;
   cursor: pointer;
   background-color: #005a59;
+  color: #fff;
+  text-decoration: none;
 
 }
