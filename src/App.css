@@ -273,3 +273,11 @@ body {
   border-top-left-radius: 30px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
+.resetP input[type="email"] {
+    width: 95%;
+    padding: 10px;
+    background-color: #c9f7cd;
+    color: black ;
+    margin-bottom: 10px;
+
+}
