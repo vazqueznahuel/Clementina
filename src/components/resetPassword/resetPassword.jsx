@@ -23,7 +23,12 @@ function ResetPassword() {
   return (
     <>
     <img src={img1} className='imagen-widi'/>  
-
+    <div className="resetP">
+      <div className='div-center'>
+ 
+      </div>
+      
+    </div>
     </>
     
   );
