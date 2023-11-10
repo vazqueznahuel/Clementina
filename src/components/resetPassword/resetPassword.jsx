@@ -37,7 +37,9 @@ function ResetPassword() {
        </div>
        {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
        <div className='div-center'>
-  
+       <button onClick={handleResetPassword}>
+         Restablecer contraseña
+       </button>
       </div>
       
     </div>
