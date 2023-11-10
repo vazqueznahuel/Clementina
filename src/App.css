@@ -283,3 +283,7 @@ body {
     border: none;
     border-bottom: 2px solid #555;
 }
+
+.resetP-field:focus {
+  outline: none;
+}
