@@ -35,7 +35,9 @@ function ResetPassword() {
           onChange={(e) => setEmail(e.target.value)}
         />
        </div>
-
+       {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
+       <div className='div-center'>
+  
       </div>
       
     </div>
