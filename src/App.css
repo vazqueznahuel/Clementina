@@ -287,3 +287,9 @@ body {
 .resetP-field:focus {
   outline: none;
 }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+  background-color: #7be495;
+}
