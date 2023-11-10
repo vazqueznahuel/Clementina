@@ -22,19 +22,24 @@ function ResetPassword() {
 
   return (
     <>
-      <img src={img1} className='imagen-widi'/>  
-      <div className="resetP">
-       <div className='div-center'>
+    <img src={img1} className='imagen-widi'/>  
+    <div className="resetP">
+      <div className='div-center'>
           <h2 className='form-title'>Resetear contraseña</h2>
-         </div>
-         <hr className='Line-separator' />
-         <div className='div-center'>
+        </div>
+        <hr className='Line-separator' />
+       <div className='div-center'>
+          <input
+          type="email"
+          placeholder="Correo electrónico"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+       </div>
 
-          </div>
       </div>
       
     </div>
-   </>
+    </>
     
   );
 }
