@@ -25,7 +25,9 @@ function ResetPassword() {
     <img src={img1} className='imagen-widi'/>  
     <div className="resetP">
       <div className='div-center'>
- 
+          <h2 className='form-title'>Resetear contraseña</h2>
+        </div>
+        <hr className='Line-separator' />
       </div>
       
     </div>
