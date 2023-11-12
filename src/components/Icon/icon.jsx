@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import img1 from '../../Imagenes/imagen1.jpeg'
+import img1 from '../../Imagenes/imagen1.jpg'
 import '../../css/sliderEpets.css'
 
 function Icon({nombre, id}) {
