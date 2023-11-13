@@ -110,10 +110,10 @@ function Register(props) {
         <form onSubmit={functAutenticacion}>
 
           <Label className="info-label" infoLabel="Ingrese nombre"/>
-          <input className='input-field' type='text' placeholder='Ingresar nombre' id='nombre'/>
+          <input className='input-field inputMitad' type='text' placeholder='Ingresar nombre' id='nombre'/>
 
           <Label className="info-label" infoLabel="Ingrese apellido"/>
-          <input className='input-field' type='text' placeholder='Ingresar apellido' id='apellido'/>
+          <input className='input-field inputMitad' type='text' placeholder='Ingresar apellido' id='apellido'/>
 
           <Label className="info-label" infoLabel="Ingrese DNI"/>
           <input className='input-field' type='text' placeholder='Ingresar DNI' id='dni'/>
