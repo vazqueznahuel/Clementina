@@ -58,7 +58,7 @@ body {
   /* Input login */
   .input-field {
     font-size: 13px;
-    width: 95%;
+    width: 100%;
     padding: 5px;
     background-color: #bff0c3;
     color: black ;
@@ -99,6 +99,11 @@ body {
   /* Fin input */
 
   /* enlace olvidar contraseña */
+  .olvidar-contraseña {
+    margin-top: -2%;
+  }
+
+
   .olvidar-contraseña-error{
     margin-top: -2%;
   }
@@ -118,6 +123,7 @@ body {
 
   .div-center h6{
     margin: auto 1%;
+    font-size: 13px;
   }
   
   .div-center hr { 

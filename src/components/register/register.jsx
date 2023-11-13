@@ -121,12 +121,12 @@ function Register(props) {
                       
           <input className='input-field' type='password' placeholder='Contraseña ' id='password'/>
           
-          <input className='input-field' type='password' placeholder='Contraseña ' id='con-password'/>
+          <input className='input-field' type='password' placeholder='Confirmar contraseña ' id='con-password'/>
           
           {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
-    
-          <button className='button'>Registrar</button>
-          
+          <div className='div-center'>
+          <button className='button'>Registrarse</button>
+          </div>
         </form>
 
         <h6 className=''> Ya tienes cuenta?
