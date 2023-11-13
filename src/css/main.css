@@ -84,3 +84,9 @@
     width: 100%;
     overflow: hidden;
 }
+
+.scanQR {
+    height: 45px;
+    width: 70%;
+    text-decoration: none;
+}

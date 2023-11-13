@@ -67,13 +67,11 @@ function Main() {
       <Window />
       {showScanner && <QRScannerPage onScan={handleScan} onClose={closeScanner} />}
       <Link to="/QRScannerPage">
-        <button>Escanear QR</button>
+        <div className='div-center'>
+        <button className='button scanQR'>Escanear QR</button>
+        </div>
       </Link>
       <SliderEpets />
-      <button onClick={toggleWidi}>
-        {widi ? 'Desactivar Widi' : 'Activar Widi'}
-      </button>
-      <QRCode value="Widi" />
     </div>
   );
 }
