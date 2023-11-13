@@ -60,15 +60,15 @@ body {
     font-size: 13px;
     width: 95%;
     padding: 5px;
-    background-color: #c9f7cd;
+    background-color: #bff0c3;
     color: black ;
     margin-bottom: 10px;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid #555;
     transition: all 0.3s ease-in-out;
-    border-radius: 0;
+    border-radius: 7px;
     margin-bottom: 25px;
+    border-bottom: 2px solid rgb(167, 229, 172);
   }
   
   .input-field:focus {

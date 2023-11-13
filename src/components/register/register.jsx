@@ -109,27 +109,19 @@ function Register(props) {
         <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
           <div className='inputBlock'>
-            <div><Label className="info-label" infoLabel="Nombre"/></div>
-            <div><Label className="info-label" infoLabel="Apellido"/></div>
-          </div>
-          <div className='inputBlock'>
-          <div><input className='input-field inputMitad' type='text' id='nombre'/></div>
-          <div><input className='input-field inputMitad' type='text' id='apellido'/></div>
+          <div><input className='input-field inputMitad' type='text' placeholder='Nombre' id='nombre'/></div>
+          <div><input className='input-field inputMitad' type='text' placeholder='Apellido' id='apellido'/></div>
 
           
           
           </div>
-          <Label className="info-label" infoLabel="Ingrese DNI"/>
-          <input className='input-field' type='text' placeholder='Ingresar DNI' id='dni'/>
+          <input className='input-field' type='text' placeholder='DNI' id='dni'/>
 
-          <Label className="info-label" infoLabel="Ingrese email"/>
-          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
+          <input className='input-field' type='text' placeholder='E-mail' id='email'/>
                       
-          <Label className="info-label" infoLabel="Ingrese contraseña"/>
-          <input className='input-field' type='password' placeholder='Ingresar contraseña ' id='password'/>
+          <input className='input-field' type='password' placeholder='Contraseña ' id='password'/>
           
-          <Label className="info-label" infoLabel="Confirmar contraseña"/>
-          <input className='input-field' type='password' placeholder='Confirmar contraseña ' id='con-password'/>
+          <input className='input-field' type='password' placeholder='Contraseña ' id='con-password'/>
           
           {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
     

@@ -76,13 +76,9 @@ function Login(props) {
         <h2 className='form-title'>Iniciar Sesion</h2>
       </div>
         <form onSubmit={functAutenticacion}>
-
-          <Label className="info-label" infoLabel="Email"/>
-          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
-                       
-          <Label className="info-label" infoLabel="Contraseña"/>
+          <input className='input-field' placeholder="E-mail" type='text' id='email'/>
           <div style={{position: 'relative'}}>
-            <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
+            <input className='input-field' type={showPassword ? "text" : "password"} placeholder='contraseña' id='password'/>
             <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
