@@ -108,13 +108,17 @@ function Register(props) {
         </div>
         <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
+          <div className='inputBlock'>
+            <div><Label className="info-label" infoLabel="Nombre"/></div>
+            <div><Label className="info-label" infoLabel="Apellido"/></div>
+          </div>
+          <div className='inputBlock'>
+          <div><input className='input-field inputMitad' type='text' id='nombre'/></div>
+          <div><input className='input-field inputMitad' type='text' id='apellido'/></div>
 
-          <Label className="info-label" infoLabel="Ingrese nombre"/>
-          <input className='input-field inputMitad' type='text' placeholder='Ingresar nombre' id='nombre'/>
-
-          <Label className="info-label" infoLabel="Ingrese apellido"/>
-          <input className='input-field inputMitad' type='text' placeholder='Ingresar apellido' id='apellido'/>
-
+          
+          
+          </div>
           <Label className="info-label" infoLabel="Ingrese DNI"/>
           <input className='input-field' type='text' placeholder='Ingresar DNI' id='dni'/>
 

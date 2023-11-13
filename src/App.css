@@ -84,7 +84,16 @@ body {
   }
 
   .inputMitad {
-    width: 40%;
+    width: 70%;
+  }
+
+  .inputBlock {
+    display: flex;
+    width: 100%;
+  }
+
+  .inputBlock div{
+    width: 50%;
   }
   /* Fin input */
 
