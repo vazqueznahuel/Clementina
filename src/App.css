@@ -10,13 +10,22 @@ body {
   }
 
   /*----------- COMPONENTE LOGIN-----------*/
+.imgContainer {
+  display: flex;
+  align-items: flex-end; /* Alinea la imagen en la parte inferior del contenedor */
+  height: 25vh; /* 20% de la altura de la pantalla */
+}
+
   .imagen-widi{
-    width: 43%;
+    width: auto; /* El ancho se ajustará automáticamente según la altura */
+    height: 100%; /* La imagen ocupará el 100% de la altura del contenedor */
+    max-width: 100%;
   }
   /* Formulario */
   .form-container {
     max-width: 90%;
     margin: 0 auto;
+    height: 75vh;
     background-color: #c9f7cd;
     padding: 20px;
     border-radius: 5px;

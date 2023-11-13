@@ -69,7 +69,8 @@ function Login(props) {
 
     return (
     <>
-    <img src={img1} className='imagen-widi'/>
+    <div className='imgContainer'><img src={img1} className='imagen-widi'/></div>
+    
     <div className="form-container">
       <div className='div-center'>
         <h2 className='form-title'>Iniciar Sesion</h2>
