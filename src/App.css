@@ -186,8 +186,8 @@ body {
 /* Menu hamburguesa */
 .hamburger {
   background-color: transparent;
-  width: 5vh;
-  height: 4vh;
+  width: 3.5vh;
+  height: 3.5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -195,7 +195,7 @@ body {
   z-index: 1000;
   position: fixed;
   margin-left: 3vh;
-  margin-top: -1vh;
+  margin-top: -2vh;
 }
 
 ._layer {
