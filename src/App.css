@@ -1,5 +1,9 @@
 /* App.css */
 /* Estilos globales o de la aplicación principal */
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #55c595;
@@ -7,15 +11,12 @@ body {
 
   /*----------- COMPONENTE LOGIN-----------*/
   .imagen-widi{
-    width: 200px;
-    height: 200px;
-    margin-bottom: 0;
+    width: 43%;
   }
   /* Formulario */
   .form-container {
     max-width: 90%;
     margin: 0 auto;
-    margin-top: 0;
     background-color: #c9f7cd;
     padding: 20px;
     border-radius: 5px;
@@ -73,7 +74,7 @@ body {
   /* enlace olvidar contraseña */
   .olvidar-contraseña{
     position: relative;
-    left: 36%;
+    text-decoration: underline;
   }
 
   .olvidar-contraseña-error{
