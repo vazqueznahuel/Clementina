@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Label from '../label/label.jsx';
 import '../../App.css';
 import { Link, useNavigate } from 'react-router-dom';
-import img1 from '../../Imagenes/img1.png'
+// Actualiza la importación de la imagen en tu componente Register
+import img1 from '../../Imagenes/img1.png';
 import appFirebase from '../../firebase/firebaseConfig.js';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc, getDocs, collection, query, where } from "firebase/firestore"; 
