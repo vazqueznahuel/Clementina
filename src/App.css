@@ -23,9 +23,9 @@ body {
   }
   /* Formulario */
   .form-container {
-    max-width: 90%;
+    max-width: 95%;
     margin: 0 auto;
-    height: 75vh;
+    min-height: 75vh;
     background-color: #c9f7cd;
     padding: 20px;
     border-radius: 5px;
@@ -84,12 +84,13 @@ body {
   }
 
   .inputMitad {
-    width: 70%;
+    width: 100%;
   }
 
   .inputBlock {
     display: flex;
     width: 100%;
+    gap: 15%;
   }
 
   .inputBlock div{
