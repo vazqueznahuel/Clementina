@@ -128,13 +128,15 @@ function Register(props) {
           <button className='button'>Registrarse</button>
           </div>
         </form>
-
+        <div className='div-center'>
+        <hr className='Line-separator'/>
         <h6 className=''> Ya tienes cuenta?
             <Link to='/Login' className='link-enlace'>
                 Inicia Sesion
             </Link>
         </h6>
-
+        <hr className='Line-separator'/>
+        </div>
       </div>
     </>
     );

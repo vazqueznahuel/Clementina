@@ -79,7 +79,7 @@ function Login(props) {
           <input className='input-field' placeholder="E-mail" type='text' id='email'/>
           <div style={{position: 'relative'}}>
             <input className='input-field' type={showPassword ? "text" : "password"} placeholder='contraseña' id='password'/>
-            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
+            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 4, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
