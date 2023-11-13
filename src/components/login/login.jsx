@@ -98,13 +98,14 @@ function Login(props) {
               </Link>
             </h6>}
           </div>
-          <button className='button'>Inicia Sesion</button>
+          <div className='div-center'>
+          <button className='button'>Inicia Sesion</button></div>
         </form>
       <div className='div-center'>
       <hr className='Line-separator' />
-        <h6 className=''> ¿No tienes cuenta?
+        <h6 className=''> ¿No tienes cuenta?<span> </span>
                     <Link to='/Registro' className='link-enlace'>
-                        Registrate
+                         Registrate
                     </Link>
         </h6>
       <hr className='Line-separator' /> 
