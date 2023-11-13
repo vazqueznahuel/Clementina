@@ -194,8 +194,8 @@ body {
   cursor: pointer;
   z-index: 1000;
   position: fixed;
-  margin-left: 3%;
-  margin-top: -2%;
+  margin-left: 3vh;
+  margin-top: -2vh;
 }
 
 ._layer {

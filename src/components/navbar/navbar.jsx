@@ -42,7 +42,7 @@ function Navbar() {
       <li className="nav-item">
           <Nav/>
         </li>
-        <li><h1>E-Pets</h1></li>
+        <h1 className='titulo'>E-Pets</h1>
       </ul>
     </nav>
   );
