@@ -44,7 +44,7 @@ body {
   }
 
   .form-title {
-    font-size: 30px;
+    font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
@@ -52,23 +52,29 @@ body {
   .info-label {
     display: block;
     font-weight: bold;
-    margin-bottom: 6px;
+    font-size: 13px;
   }
 
   /* Input login */
   .input-field {
+    font-size: 13px;
     width: 95%;
-    padding: 10px;
+    padding: 5px;
     background-color: #c9f7cd;
     color: black ;
     margin-bottom: 10px;
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid #555;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0;
+    margin-bottom: 25px;
   }
   
   .input-field:focus {
     outline: none;
+    border-radius: 13px;
+    background-color: rgb(167, 229, 172);
   }
 
   input:-webkit-autofill {
@@ -79,18 +85,13 @@ body {
   /* Fin input */
 
   /* enlace olvidar contraseña */
-  .olvidar-contraseña{
-    text-decoration: underline;
-  }
-
   .olvidar-contraseña-error{
     margin-top: -2%;
-    text-decoration: underline;
   }
 
   .link-enlace{
     color: black;
-    text-decoration: none;
+    font-size: 13px;
   }
 
   /* Fin olvidar contraseña */
@@ -114,7 +115,7 @@ body {
 .div-botones{
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 0 5%;
   margin-top: 3%;
 }
 
@@ -140,8 +141,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  text-align: center;
-  margin-bottom: 2%;
+  text-align: center; 
 }
 
 
