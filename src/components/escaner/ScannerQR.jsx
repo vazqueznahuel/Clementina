@@ -1,5 +1,5 @@
 // QRScanner.js
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
@@ -24,11 +24,18 @@ const QRScanner = ({ onScan, onClose }) => {
   };
 
   const handleCameraStart = () => {
-    navigator.mediaDevices.enumerateDevices().then((devices) => {
-      const deviceId = getDeviceId(devices);
+    if (videoRef.current && videoRef.current.stream) {
+      // Asegurarnos de que el objeto stream esté definido antes de acceder a él
+      const deviceId = getDeviceId(videoRef.current.stream.getTracks());
       videoRef.current.stream.getVideoTracks()[0].applyConstraints({ deviceId });
-    });
+    }
   };
+
+  useEffect(() => {
+    if (videoRef.current && videoRef.current.stream) {
+      handleCameraStart();
+    }
+  }, [videoRef.current]);
 
   return (
     <div>
