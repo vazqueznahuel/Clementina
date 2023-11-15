@@ -1,11 +1,10 @@
-// QRScanner.js
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
-  const videoRef = useRef();
+  const [facingMode, setFacingMode] = useState('environment'); // 'environment' para la cámara trasera
 
   const handleScan = (data) => {
     if (data) {
@@ -18,37 +17,29 @@ const QRScanner = ({ onScan, onClose }) => {
     console.error(err);
   };
 
-  const getDeviceId = (devices) => {
-    const rearCamera = devices.find((device) => device.label.includes('back'));
-    return rearCamera ? rearCamera.deviceId : devices[0].deviceId;
+  const toggleFacingMode = () => {
+    setFacingMode((prevFacingMode) =>
+      prevFacingMode === 'user' ? 'environment' : 'user'
+    );
   };
 
-  const handleCameraStart = () => {
-    if (videoRef.current && videoRef.current.stream) {
-      // Asegurarnos de que el objeto stream esté definido antes de acceder a él
-      const deviceId = getDeviceId(videoRef.current.stream.getTracks());
-      videoRef.current.stream.getVideoTracks()[0].applyConstraints({ deviceId });
-    }
+  const videoConstraints = {
+    facingMode,
   };
-
-  useEffect(() => {
-    if (videoRef.current && videoRef.current.stream) {
-      handleCameraStart();
-    }
-  }, [videoRef.current]);
 
   return (
     <div>
       {cameraActive ? (
-        <QrReader
-          delay={100}
-          style={{ width: '100%' }}
-          onError={handleError}
-          onScan={handleScan}
-          videoConstraints={false} // Desactivar videoConstraints por ahora
-          onLoad={handleCameraStart}
-          ref={videoRef}
-        />
+        <div>
+          <QrReader
+            delay={100}
+            style={{ width: '100%' }}
+            onError={handleError}
+            onScan={handleScan}
+            videoConstraints={videoConstraints}
+          />
+          <button onClick={toggleFacingMode}>Cambiar Cámara</button>
+        </div>
       ) : null}
       <Link to="/Main">
         <button>Cerrar cámara</button>
