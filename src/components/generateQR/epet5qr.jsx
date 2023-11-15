@@ -4,5 +4,9 @@ import QRCode from 'qrcode.react';
 function Epet5qr() {
     const qrData = ''
 
-    return ();
+    return (
+        <div>
+         <QRCode value={qrData}/>
+        </div>
+    );
 }
