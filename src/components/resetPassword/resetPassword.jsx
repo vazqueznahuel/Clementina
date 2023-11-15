@@ -22,14 +22,18 @@ function ResetPassword() {
 
   return (
     <>
+    <div className="imgContainer">
     <img src={img1} className='imagen-widi'/>  
-    <div className="resetP">
+    </div>
+    <div className="form-container">
+      
       <div className='div-center'>
           <h2 className='form-title'>Resetear contraseña</h2>
         </div>
         <hr className='Line-separator' />
        <div className='div-center'>
           <input
+          className="input-field"
           type="email"
           placeholder="Correo electrónico"
           onChange={(e) => setEmail(e.target.value)}
@@ -37,7 +41,7 @@ function ResetPassword() {
        </div>
        {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
        <div className='div-center'>
-       <button onClick={handleResetPassword}>
+       <button className="button" onClick={handleResetPassword}>
          Restablecer contraseña
        </button>
       </div>

@@ -8,20 +8,11 @@
    
 /* Navbar.css */
 
-.fotoUsuario {
-    max-width: 5rem;
-    border-radius: 50%;
-}
-
-.menuHamburguesa {
-    width: 3rem;
-}
-
 .navbar {
     width: 100%;
     background-color: #56c596;
     color: #fff;
-    padding: 1rem;
+    height: 7vh;
 }
 
 .nav-list {
@@ -29,12 +20,11 @@
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.nav-item {
-    margin: 0 1rem;
-}
 
 .nav-link {
     text-decoration: none;
@@ -82,4 +72,21 @@
     background-color: #329d9c;
     border: 2px solid #309b99;
     transform: scale(1.05);
+}
+
+.titulo {
+    width: 100%;
+    padding-top: .5vh;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scanQR {
+    height: 45px;
+    width: 70%;
+    text-decoration: none;
 }

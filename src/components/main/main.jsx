@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { getAuth } from 'firebase/auth';
-import { getFirestore, updateDoc, getDoc, doc } from 'firebase/firestore';
-import QrReader from 'react-qr-scanner';
+import { getAuth } from 'firebase/auth'; // Correct import for getAuth
+import { updateDoc, getDoc, doc, getFirestore } from 'firebase/firestore'; // Correct import for getFirestore
 import QRCode from 'react-qr-code';
-import '../../css/main.css';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../navbar/navbar';
 import Window from '../window/window';
 import SliderEpets from '../sliderEpets/sliderEpets';
 import Button from '../button/button';
+import QRScannerPage from '../escaner/QRScannerPage.js'; // Importa el nuevo componente
 
 import appFirebase from '../../firebase/firebaseConfig.js';
 
 const auth = getAuth(appFirebase);
 const db = getFirestore(appFirebase);
 
+
 function Main() {
   const [widi, setWidi] = useState(false);
   const [user, setUser] = useState(null);
-  const [cameraActive, setCameraActive] = useState(false);
+  const [showScanner, setShowScanner] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -47,60 +48,30 @@ function Main() {
     });
   };
 
-  const handleScan = async (data) => {
-    if (data) { // Verificar si se escaneó algo antes de actualizar
-      const docRef = doc(db, 'users', user.uid);
-      await updateDoc(docRef, {
-        Widi: true,
-      });
-      console.log("seescanei")
-      setCameraActive(false); // Desactivar la cámara después de escanear
-    }
+  const handleScan = (data) => {
+    // Manejar los datos escaneados aquí
+    console.log('Datos escaneados:', data);
   };
 
-  const handleError = (err) => {
-    console.error(err);
+  const openScanner = () => {
+    setShowScanner(true);
   };
 
-  const startCamera = () => {
-    setCameraActive(true);
-  };
-
-  const stopCamera = () => {
-    setCameraActive(false);
-  };
-
-  const videoConstraints = {
-    facingMode: 'environment', // Utiliza la cámara trasera (cambia a 'user' para la frontal)
+  const closeScanner = () => {
+    setShowScanner(false);
   };
 
   return (
     <div className="main">
       <Navbar />
       <Window />
-      {cameraActive ? (
-        <QrReader
-          delay={100}
-          style={{ width: '100%' }}
-          onError={handleError}
-          onScan={handleScan}
-          videoConstraints={videoConstraints}
-        />
-      ) : (
-        <video
-          autoPlay
-          playsInline
-          muted
-          style={{ width: '100%', height: 'auto' }}
-        ></video>
-      )}
-      <button onClick={startCamera}>Activar cámara</button>
-      <button onClick={stopCamera}>Desactivar cámara</button>
+      {showScanner && <QRScannerPage onScan={handleScan} onClose={closeScanner} />}
+      <Link to="/QRScannerPage">
+        <div className='div-center'>
+        <button className='button scanQR'>Escanear QR</button>
+        </div>
+      </Link>
       <SliderEpets />
-      <button onClick={toggleWidi}>
-        {widi ? 'Desactivar Widi' : 'Activar Widi'}
-      </button>
-      <QRCode value="Widi" />
     </div>
   );
 }

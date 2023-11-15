@@ -69,20 +69,17 @@ function Login(props) {
 
     return (
     <>
-    <img src={img1} className='imagen-widi'/>
+    <div className='imgContainer'><img src={img1} className='imagen-widi'/></div>
+    
     <div className="form-container">
       <div className='div-center'>
         <h2 className='form-title'>Iniciar Sesion</h2>
       </div>
         <form onSubmit={functAutenticacion}>
-
-          <Label className="info-label" infoLabel="Email"/>
-          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
-                       
-          <Label className="info-label" infoLabel="Contraseña"/>
+          <input className='input-field' placeholder="E-mail" type='text' id='email'/>
           <div style={{position: 'relative'}}>
-            <input className='input-field' type={showPassword ? "text" : "password"} placeholder='Ingresar contraseña ' id='password'/>
-            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 10, border: 'none', backgroundColor: 'transparent'}}>
+            <input className='input-field' type={showPassword ? "text" : "password"} placeholder='contraseña' id='password'/>
+            <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 4, border: 'none', backgroundColor: 'transparent'}}>
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -98,13 +95,14 @@ function Login(props) {
               </Link>
             </h6>}
           </div>
-          <button className='button'>Inicia Sesion</button>
+          <div className='div-center'>
+          <button className='button'>Inicia Sesion</button></div>
         </form>
       <div className='div-center'>
       <hr className='Line-separator' />
-        <h6 className=''> ¿No tienes cuenta?
+        <h6 className=''> ¿No tienes cuenta?<span> </span>
                     <Link to='/Registro' className='link-enlace'>
-                        Registrate
+                         Registrate
                     </Link>
         </h6>
       <hr className='Line-separator' /> 

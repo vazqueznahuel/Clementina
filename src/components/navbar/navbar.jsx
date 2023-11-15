@@ -38,18 +38,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul className="nav-list">
-        <li className="nav-ftUsuario">
-            {/* el link redirigiria al perfil de usuario, es decir, si toco la foto
-            de perfil me deberia llevar al perfil del usuario.
-            Esa imagen la puse para probar pero obvio iria una que elija el usuario */}
-          <a href="/" className='nav-link'><img className='fotoUsuario' src={img1}/></a>
-        </li>
-        <li className="nav-item nameUsuario">
-        {user ? (nombre && apellido ? <h1>Bienvenido, {nombre} {apellido}</h1> : <h1>Bienvenido, usuario anónimo</h1>) : <h1>Por favor inicia sesión</h1>}
-        </li>
-        <li className="nav-item">
+        
+      <li className="nav-item">
           <Nav/>
         </li>
+        <h1 className='titulo'>E-Pets</h1>
       </ul>
     </nav>
   );
