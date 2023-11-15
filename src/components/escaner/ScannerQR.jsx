@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
   const [facingMode, setFacingMode] = useState('environment'); // 'environment' para la cámara trasera
+  const videoRef = useRef();
 
   const handleScan = (data) => {
     if (data) {
@@ -27,6 +28,10 @@ const QRScanner = ({ onScan, onClose }) => {
     facingMode,
   };
 
+  const restartCamera = () => {
+    setCameraActive(true);
+  };
+
   return (
     <div>
       {cameraActive ? (
@@ -37,13 +42,15 @@ const QRScanner = ({ onScan, onClose }) => {
             onError={handleError}
             onScan={handleScan}
             videoConstraints={videoConstraints}
+            ref={videoRef}
           />
           <button onClick={toggleFacingMode}>Cambiar Cámara</button>
         </div>
-      ) : null}
-      <Link to="/Main">
-        <button>Cerrar cámara</button>
-      </Link>
+      ) : (
+        <Link to="/Main">
+          <button onClick={restartCamera}>Cerrar cámara</button>
+        </Link>
+      )}
     </div>
   );
 };
