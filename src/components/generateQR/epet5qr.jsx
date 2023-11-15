@@ -10,3 +10,5 @@ function Epet5qr() {
         </div>
     );
 }
+
+export default Epet5qr;
