@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Label from '../label/label.jsx';
 import '../../App.css';
 import { Link, useNavigate } from 'react-router-dom';
-import img1 from '../../Imagenes/img1.png'
+// Actualiza la importación de la imagen en tu componente Register
+import img1 from '../../Imagenes/img1.png';
 import appFirebase from '../../firebase/firebaseConfig.js';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc, getDocs, collection, query, where } from "firebase/firestore"; 
@@ -101,44 +102,42 @@ function Register(props) {
 
     return (
     <>
-      <img src={img1} className='imagen-widi'/>  
+      <div className='imgContainer'><img src={img1} className='imagen-widi'/></div>  
       <div className="form-container">
         <div className='div-center'>
           <h2 className='form-title'>Registrar</h2>
         </div>
         <hr className='Line-separator' />
         <form onSubmit={functAutenticacion}>
+          <div className='inputBlock'>
+          <div><input className='input-field inputMitad' type='text' placeholder='Nombre' id='nombre'/></div>
+          <div><input className='input-field inputMitad' type='text' placeholder='Apellido' id='apellido'/></div>
 
-          <Label className="info-label" infoLabel="Ingrese nombre"/>
-          <input className='input-field' type='text' placeholder='Ingresar nombre' id='nombre'/>
-
-          <Label className="info-label" infoLabel="Ingrese apellido"/>
-          <input className='input-field' type='text' placeholder='Ingresar apellido' id='apellido'/>
-
-          <Label className="info-label" infoLabel="Ingrese DNI"/>
-          <input className='input-field' type='text' placeholder='Ingresar DNI' id='dni'/>
-
-          <Label className="info-label" infoLabel="Ingrese email"/>
-          <input className='input-field' type='text' placeholder='Ingresar email' id='email'/>
-                      
-          <Label className="info-label" infoLabel="Ingrese contraseña"/>
-          <input className='input-field' type='password' placeholder='Ingresar contraseña ' id='password'/>
           
-          <Label className="info-label" infoLabel="Confirmar contraseña"/>
+          
+          </div>
+          <input className='input-field' type='text' placeholder='DNI' id='dni'/>
+
+          <input className='input-field' type='text' placeholder='E-mail' id='email'/>
+                      
+          <input className='input-field' type='password' placeholder='Contraseña ' id='password'/>
+          
           <input className='input-field' type='password' placeholder='Confirmar contraseña ' id='con-password'/>
           
           {errorMessage && <p style={{ color: "red" , marginBottom: "-5px"}}>{errorMessage}</p>}
-    
-          <button className='button'>Registrar</button>
-          
+          <div className='div-center'>
+          <button className='button'>Registrarse</button>
+          </div>
         </form>
-
+        <div className='div-center'>
+        <hr className='Line-separator'/>
         <h6 className=''> Ya tienes cuenta?
             <Link to='/Login' className='link-enlace'>
                 Inicia Sesion
             </Link>
         </h6>
-
+        <hr className='Line-separator'/>
+        </div>
       </div>
     </>
     );
