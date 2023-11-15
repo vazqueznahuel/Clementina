@@ -1,10 +1,11 @@
 // QRScanner.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
+  const videoRef = useRef();
 
   const handleScan = (data) => {
     if (data) {
@@ -17,8 +18,16 @@ const QRScanner = ({ onScan, onClose }) => {
     console.error(err);
   };
 
-  const videoConstraints = {
-    facingMode: 'environment',
+  const getDeviceId = (devices) => {
+    const rearCamera = devices.find((device) => device.label.includes('back'));
+    return rearCamera ? rearCamera.deviceId : devices[0].deviceId;
+  };
+
+  const handleCameraStart = () => {
+    navigator.mediaDevices.enumerateDevices().then((devices) => {
+      const deviceId = getDeviceId(devices);
+      videoRef.current.stream.getVideoTracks()[0].applyConstraints({ deviceId });
+    });
   };
 
   return (
@@ -29,7 +38,9 @@ const QRScanner = ({ onScan, onClose }) => {
           style={{ width: '100%' }}
           onError={handleError}
           onScan={handleScan}
-          videoConstraints={videoConstraints}
+          videoConstraints={false} // Desactivar videoConstraints por ahora
+          onLoad={handleCameraStart}
+          ref={videoRef}
         />
       ) : null}
       <Link to="/Main">
