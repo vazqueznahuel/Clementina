@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { QrReader } from 'react-qr-reader';
 
-const QRScanner = ({ onClose }) => {
+const QRScanner = () => {
   const [cameraActive, setCameraActive] = useState(true);
   const [facingMode, setFacingMode] = useState('environment');
   const qrReaderRef = useRef(null);
@@ -26,6 +26,10 @@ const QRScanner = ({ onClose }) => {
     console.log('Nuevo facingMode:', facingMode);
   };
 
+  const closeCamera = () => {
+    setCameraActive(false);
+  };
+
   const openCamera = () => {
     setCameraActive(true);
   };
@@ -48,11 +52,11 @@ const QRScanner = ({ onClose }) => {
             style={{ width: '100%' }}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
+          <button onClick={closeCamera}>Cerrar Cámara</button>
         </div>
       ) : (
         <button onClick={openCamera}>Abrir Cámara</button>
       )}
-      <button onClick={onClose}>Cerrar cámara</button>
     </div>
   );
 };
