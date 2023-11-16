@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { QrReader } from 'react-qr-reader';
+import QrReader from 'react-qr-reader';
 
-const QRScanner = ({ onScan, onClose }) => {
+const QRScanner = ({ onScan }) => {
   const [cameraActive, setCameraActive] = useState(true);
   const [facingMode, setFacingMode] = useState('environment');
   const qrReaderRef = useRef(null);
@@ -21,13 +21,10 @@ const QRScanner = ({ onScan, onClose }) => {
     setFacingMode((prevFacingMode) =>
       prevFacingMode === 'environment' ? 'user' : 'environment'
     );
-    alert(`Cámara cambiada a ${facingMode === 'environment' ? 'frontal' : 'trasera'}`);
   };
 
-  const openDialog = () => {
-    if (qrReaderRef.current) {
-      qrReaderRef.current.openImageDialog();
-    }
+  const closeCamera = () => {
+    setCameraActive(false);
   };
 
   return (
@@ -41,12 +38,12 @@ const QRScanner = ({ onScan, onClose }) => {
             onScan={handleScan}
             facingMode={facingMode}
             style={{ width: '100%' }}
+            key={facingMode}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
-          <button onClick={openDialog}>Abrir Diálogo</button>
         </div>
       )}
-      <button onClick={onClose}>Cerrar cámara</button>
+      <button onClick={closeCamera}>Cerrar cámara</button>
     </div>
   );
 };
