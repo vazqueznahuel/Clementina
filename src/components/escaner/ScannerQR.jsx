@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { QrReader } from 'react-qr-reader'; // Asegúrate de usar { QrReader } en lugar de simplemente 'QrReader'
+import { QrReader } from 'react-qr-reader';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
@@ -32,7 +32,7 @@ const QRScanner = ({ onScan, onClose }) => {
 
   return (
     <div>
-      {cameraActive ? (
+      {cameraActive && (
         <div>
           <QrReader
             ref={qrReaderRef}
@@ -45,11 +45,10 @@ const QRScanner = ({ onScan, onClose }) => {
           <button onClick={toggleCamera}>Cambiar Cámara</button>
           <button onClick={openDialog}>Abrir Diálogo</button>
         </div>
-      ) : null}
+      )}
       <button onClick={onClose}>Cerrar cámara</button>
     </div>
   );
 };
 
 export default QRScanner;
-s
