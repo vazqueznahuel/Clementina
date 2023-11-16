@@ -22,11 +22,17 @@ const QRScanner = ({ onScan, onClose }) => {
     setFacingMode((prevFacingMode) =>
       prevFacingMode === 'environment' ? 'user' : 'environment'
     );
+    alert(`Cámara cambiada a ${facingMode === 'environment' ? 'frontal' : 'trasera'}`);
   };
 
   const openDialog = () => {
     if (qrReaderRef.current) {
-      qrReaderRef.current.openImageDialog();
+      const imageDialogFunction = qrReaderRef.current.openImageDialog;
+      if (imageDialogFunction && typeof imageDialogFunction === 'function') {
+        imageDialogFunction();
+      } else {
+        console.error('La función openImageDialog no está disponible');
+      }
     }
   };
 
