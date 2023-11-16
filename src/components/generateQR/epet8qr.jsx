@@ -9,3 +9,4 @@ function Epet8qr() {
         </div>
     );
 }
+export default Epet8qr;
