@@ -1,30 +1,26 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
 import QrReader from 'react-qr-scanner';
 
-const QRScanner = ({ onScan }) => {
+const QRScanner = () => {
+  const [cameraFacingMode, setCameraFacingMode] = useState('environment'); // 'environment' para la cámara trasera
   const [cameraActive, setCameraActive] = useState(true);
-  const [facingMode, setFacingMode] = useState('environment'); // 'environment' para la cámara trasera
+  const videoRef = useRef();
 
   const handleScan = (data) => {
     if (data) {
-      onScan(data);
-      setCameraActive(false);
+      console.log('Código QR escaneado:', data);
+      // Lógica para manejar el código QR escaneado
     }
   };
 
   const handleError = (err) => {
-    console.error(err);
+    console.error('Error al escanear código QR:', err);
   };
 
-  const toggleFacingMode = () => {
-    setFacingMode((prevFacingMode) =>
+  const toggleCameraFacingMode = () => {
+    setCameraFacingMode((prevFacingMode) =>
       prevFacingMode === 'user' ? 'environment' : 'user'
     );
-  };
-
-  const videoConstraints = {
-    facingMode,
   };
 
   const restartCamera = () => {
@@ -33,27 +29,26 @@ const QRScanner = ({ onScan }) => {
 
   return (
     <div>
-      {cameraActive ? (
+      {cameraActive && (
         <div>
           <QrReader
             delay={100}
             style={{ width: '100%' }}
             onError={handleError}
             onScan={handleScan}
-            videoConstraints={videoConstraints}
+            videoConstraints={{ facingMode: cameraFacingMode }}
+            ref={(node) => {
+              videoRef.current = node;
+            }}
           />
-          <button onClick={toggleFacingMode}>Cambiar Cámara</button>
+          <button onClick={toggleCameraFacingMode}>Cambiar Cámara</button>
         </div>
-      ) : (
-        <div>
-          <Link to="/Main">
-            <button onClick={restartCamera}>Cerrar cámara</button>
-          </Link>
-        </div>
+      )}
+      {!cameraActive && (
+        <button onClick={restartCamera}>Reiniciar Cámara</button>
       )}
     </div>
   );
 };
 
 export default QRScanner;
-
