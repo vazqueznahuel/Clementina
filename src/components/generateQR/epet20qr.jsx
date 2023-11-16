@@ -6,9 +6,6 @@ function Epet20qr() {
 
     return (
         <div>
-            {/* Primera instancia sin opciones adicionales */}
-            <QRCode value={qrData} />
-
             {/* Segunda instancia con opciones adicionales */}
             <QRCode
                 value={qrData}
