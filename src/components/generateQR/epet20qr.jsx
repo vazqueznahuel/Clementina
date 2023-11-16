@@ -1,7 +1,7 @@
 import React from 'react';
 import QRCode from 'qrcode.react';
 
-function Epet3qr() {
+function Epet20qr() {
     const qrData = ''
 
         return (
@@ -10,3 +10,5 @@ function Epet3qr() {
             </div>
         );
 }
+
+export default Epet20qr;
