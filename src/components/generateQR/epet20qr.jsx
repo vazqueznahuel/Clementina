@@ -11,4 +11,12 @@ function Epet20qr() {
         );
 }
 
+<QRCode
+  value={qrData}
+  size={128}  // Tamaño en píxeles
+  bgColor="#FFFFFF"  // Color de fondo
+  fgColor="#000000"  // Color de primer plano
+  level="L"  // Nivel de corrección de errores (L, M, Q, H)
+/>
+
 export default Epet20qr;
