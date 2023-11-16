@@ -310,3 +310,8 @@ input:-webkit-autofill {
     width: 300px;
     height: 300px;
 }
+
+.qr{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
