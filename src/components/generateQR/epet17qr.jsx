@@ -1,4 +1,7 @@
 import React from 'react';
 import QRCode from 'qrcode.react';
 
-function Epet17qr() {}
+function Epet17qr() {
+    const qrData = ''
+
+}
