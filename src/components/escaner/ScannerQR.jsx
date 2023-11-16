@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import QrReader from 'react-qr-reader';
+import { QrReader } from 'react-qr-reader'; // Asegúrate de usar { QrReader } en lugar de simplemente 'QrReader'
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
@@ -39,7 +39,7 @@ const QRScanner = ({ onScan, onClose }) => {
             delay={100}
             onError={handleError}
             onScan={handleScan}
-            facingMode={facingMode} // `facingMode` es un prop directo en react-qr-reader
+            facingMode={facingMode}
             style={{ width: '100%' }}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
@@ -52,3 +52,4 @@ const QRScanner = ({ onScan, onClose }) => {
 };
 
 export default QRScanner;
+s
