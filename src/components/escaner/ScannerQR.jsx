@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import QrReader from 'react-qr-scanner';
+import React, { useState, useRef } from 'react';
+import QrReader from 'react-qr-reader';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
@@ -27,12 +26,7 @@ const QRScanner = ({ onScan, onClose }) => {
 
   const openDialog = () => {
     if (qrReaderRef.current) {
-      const imageDialogFunction = qrReaderRef.current.openImageDialog;
-      if (imageDialogFunction && typeof imageDialogFunction === 'function') {
-        imageDialogFunction();
-      } else {
-        console.error('La función openImageDialog no está disponible');
-      }
+      qrReaderRef.current.openImageDialog();
     }
   };
 
@@ -43,18 +37,16 @@ const QRScanner = ({ onScan, onClose }) => {
           <QrReader
             ref={qrReaderRef}
             delay={100}
-            style={{ width: '100%' }}
             onError={handleError}
             onScan={handleScan}
-            videoConstraints={{ facingMode }}
+            facingMode={facingMode} // `facingMode` es un prop directo en react-qr-reader
+            style={{ width: '100%' }}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
           <button onClick={openDialog}>Abrir Diálogo</button>
         </div>
       ) : null}
-      <Link to="/Main">
-        <button>Cerrar cámara</button>
-      </Link>
+      <button onClick={onClose}>Cerrar cámara</button>
     </div>
   );
 };
