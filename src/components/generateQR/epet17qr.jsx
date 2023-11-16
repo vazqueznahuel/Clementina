@@ -10,3 +10,5 @@ function Epet17qr() {
     );
 
 }
+
+export default Epet3qr;
