@@ -55,9 +55,64 @@ const QRScanner = () => {
           // Aquí podrías decidir si deseas desactivar la cámara o realizar otras acciones
           setCameraActive(false);
           navigate("/ModelSlider/1");
-        } else {
-          console.error("El documento del usuario no existe.");
         }
+
+        if (result=="Dozer"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Dozer: true,
+            });
+          }
+          setCameraActive(false);
+          navigate("/ModelSlider/2");
+        }
+
+        if (result=="Jeison"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Jeison: true,
+            });
+          }
+          setCameraActive(false);
+          navigate("/ModelSlider/3");
+        }
+
+        if (result=="Recipablo"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Recipablo: true,
+            });
+          }
+          setCameraActive(false);
+          navigate("/ModelSlider/4");
+        }
+
+        if (result=="Gato"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Gato: true,
+            });
+          }
+          setCameraActive(false);
+          navigate("/ModelSlider/5");
+        }
+
+        if (result=="Anguila"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Anguila: true,
+            });
+          }
+          setCameraActive(false);
+          navigate("/ModelSlider/6");
+        }
+
+
       } catch (error) {
         console.error("Error al actualizar el documento:", error);
       }
