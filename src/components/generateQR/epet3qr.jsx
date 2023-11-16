@@ -2,11 +2,18 @@ import React from 'react';
 import QRCode from 'qrcode.react';
 
 function Epet3qr() {
-    const qrData = ''
 
     return (
         <div>
-            <QRCode value={qrData}/>
+            {/* Segunda instancia con opciones adicionales */}
+            <QRCode
+                value="Recipablo"
+                size={128}  // Tamaño en píxeles
+                bgColor="#FFFFFF"  // Color de fondo
+                fgColor="#000000"  // Color de primer plano
+                level="L"  // Nivel de corrección de errores (L, M, Q, H)
+                className='qr'
+            />
         </div>
     );
 }
