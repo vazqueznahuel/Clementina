@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import QrReader from 'react-qr-reader';
+import { QrReader } from 'react-qr-reader';
 
 const QRScanner = ({ onScan }) => {
   const [cameraActive, setCameraActive] = useState(true);
@@ -38,7 +38,6 @@ const QRScanner = ({ onScan }) => {
             onScan={handleScan}
             facingMode={facingMode}
             style={{ width: '100%' }}
-            key={facingMode}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
         </div>
