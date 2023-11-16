@@ -1,52 +1,40 @@
-import React, { useState, useRef } from 'react';
+// QRScanner.js
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
-const QRScanner = () => {
-  const [cameraFacingMode, setCameraFacingMode] = useState('environment'); // 'environment' para la cámara trasera
+const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
-  const videoRef = useRef();
 
   const handleScan = (data) => {
     if (data) {
-      console.log('Código QR escaneado:', data);
-      // Lógica para manejar el código QR escaneado
+      onScan(data);
+      setCameraActive(false);
     }
   };
 
   const handleError = (err) => {
-    console.error('Error al escanear código QR:', err);
+    console.error(err);
   };
 
-  const toggleCameraFacingMode = () => {
-    setCameraFacingMode((prevFacingMode) =>
-      prevFacingMode === 'user' ? 'environment' : 'user'
-    );
-  };
-
-  const restartCamera = () => {
-    setCameraActive(true);
+  const videoConstraints = {
+    facingMode: 'environment',
   };
 
   return (
     <div>
-      {cameraActive && (
-        <div>
-          <QrReader
-            delay={100}
-            style={{ width: '100%' }}
-            onError={handleError}
-            onScan={handleScan}
-            videoConstraints={{ facingMode: cameraFacingMode }}
-            ref={(node) => {
-              videoRef.current = node;
-            }}
-          />
-          <button onClick={toggleCameraFacingMode}>Cambiar Cámara</button>
-        </div>
-      )}
-      {!cameraActive && (
-        <button onClick={restartCamera}>Reiniciar Cámara</button>
-      )}
+      {cameraActive ? (
+        <QrReader
+          delay={100}
+          style={{ width: '100%' }}
+          onError={handleError}
+          onScan={handleScan}
+          videoConstraints={videoConstraints}
+        />
+      ) : null}
+      <Link to="/Main">
+        <button>Cerrar cámara</button>
+      </Link>
     </div>
   );
 };
