@@ -3,6 +3,10 @@ import QRCode from 'qrcode.react';
 
 function Epet14qr() {
     const qrData = ''
-    return ();
+    return (
+        <div>
+            <QRCode value={qrData}/>
+        </div>
+    );
 
 }
