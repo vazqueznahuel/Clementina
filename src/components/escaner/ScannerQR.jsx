@@ -1,11 +1,11 @@
-// QRScanner.js
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
-  const videoRef = useRef();
+  const [facingMode, setFacingMode] = useState('environment');
+  const qrReaderRef = useRef(null);
 
   const handleScan = (data) => {
     if (data) {
@@ -18,37 +18,33 @@ const QRScanner = ({ onScan, onClose }) => {
     console.error(err);
   };
 
-  const getDeviceId = (devices) => {
-    const rearCamera = devices.find((device) => device.label.includes('back'));
-    return rearCamera ? rearCamera.deviceId : devices[0].deviceId;
+  const toggleCamera = () => {
+    setFacingMode((prevFacingMode) =>
+      prevFacingMode === 'environment' ? 'user' : 'environment'
+    );
   };
 
-  const handleCameraStart = () => {
-    if (videoRef.current && videoRef.current.stream) {
-      // Asegurarnos de que el objeto stream esté definido antes de acceder a él
-      const deviceId = getDeviceId(videoRef.current.stream.getTracks());
-      videoRef.current.stream.getVideoTracks()[0].applyConstraints({ deviceId });
+  const openDialog = () => {
+    if (qrReaderRef.current) {
+      qrReaderRef.current.openImageDialog();
     }
   };
-
-  useEffect(() => {
-    if (videoRef.current && videoRef.current.stream) {
-      handleCameraStart();
-    }
-  }, [videoRef.current]);
 
   return (
     <div>
       {cameraActive ? (
-        <QrReader
-          delay={100}
-          style={{ width: '100%' }}
-          onError={handleError}
-          onScan={handleScan}
-          videoConstraints={false} // Desactivar videoConstraints por ahora
-          onLoad={handleCameraStart}
-          ref={videoRef}
-        />
+        <div>
+          <QrReader
+            ref={qrReaderRef}
+            delay={100}
+            style={{ width: '100%' }}
+            onError={handleError}
+            onScan={handleScan}
+            videoConstraints={{ facingMode }}
+          />
+          <button onClick={toggleCamera}>Cambiar Cámara</button>
+          <button onClick={openDialog}>Abrir Diálogo</button>
+        </div>
       ) : null}
       <Link to="/Main">
         <button>Cerrar cámara</button>

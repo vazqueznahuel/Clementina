@@ -8,7 +8,7 @@ import Navbar from '../navbar/navbar';
 import Window from '../window/window';
 import SliderEpets from '../sliderEpets/sliderEpets';
 import Button from '../button/button';
-import QRScannerPage from '../escaner/QRScannerPage.js'; // Importa el nuevo componente
+import QRScannerPage from '../escaner/QRScannerPage.jsx'; // Importa el nuevo componente
 
 import appFirebase from '../../firebase/firebaseConfig.js';
 
