@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import QrReader from 'react-qr-scanner';
 
 const QRScanner = ({ onScan, onClose }) => {
   const [cameraActive, setCameraActive] = useState(true);
   const [facingMode, setFacingMode] = useState('environment');
+  const qrReaderRef = useRef(null);
 
   const handleScan = (data) => {
     if (data) {
@@ -23,11 +24,16 @@ const QRScanner = ({ onScan, onClose }) => {
     );
   };
 
+  const openDialog = () => {
+    qrReaderRef.current.openImageDialog();
+  };
+
   return (
     <div>
       {cameraActive ? (
         <div>
           <QrReader
+            ref={qrReaderRef}
             delay={100}
             style={{ width: '100%' }}
             onError={handleError}
@@ -35,6 +41,7 @@ const QRScanner = ({ onScan, onClose }) => {
             videoConstraints={{ facingMode }}
           />
           <button onClick={toggleCamera}>Cambiar Cámara</button>
+          <button onClick={openDialog}>Abrir Diálogo</button>
         </div>
       ) : null}
       <Link to="/Main">
