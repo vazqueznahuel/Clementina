@@ -1,17 +1,66 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { QrReader } from 'react-qr-reader';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import onAuthStateChanged
+import { updateDoc, doc, getFirestore, getDoc } from 'firebase/firestore';
+import appFirebase from '../../firebase/firebaseConfig.js';
+
+const auth = getAuth(appFirebase);
+const db = getFirestore(appFirebase);
 
 const QRScanner = () => {
-  const [cameraActive, setCameraActive] = useState(true);
+  const [cameraActive, setCameraActive] = useState(false);
   const [facingMode, setFacingMode] = useState('environment');
+  const [user, setUser] = useState(null);
   const qrReaderRef = useRef(null);
+  const navigate = useNavigate();
 
-  const handleResult = (result) => {
-    if (result) {
-      console.log('Resultado del escaneo:', result);
-      // Realizar acciones adicionales si es necesario
-      // Aquí podrías decidir si deseas desactivar la cámara o realizar otras acciones
-      setCameraActive(false);
+  useEffect(() => {
+    // Agrega un listener para detectar cambios en la autenticación
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      setUser(authUser);
+    });
+
+    // Limpia el listener al desmontar el componente
+    return () => unsubscribe();
+  }, []);
+
+  const handleResult = async (result) => {
+    if (result && user) {
+      try {
+        const docRef = doc(db, 'users', user.uid);
+        const docSnap = await getDoc(docRef);
+
+
+        if (result=="Widi"){
+          
+        if (docSnap.exists()) {
+          await updateDoc(docRef, {
+            Widi: true,
+          });
+        }
+        setCameraActive(false);
+        navigate("/ModelSlider/0");
+      }
+
+        if (result=="Calamaria"){
+          
+          if (docSnap.exists()) {
+            await updateDoc(docRef, {
+              Calamaria: true,
+            });
+  
+          }
+          // Realizar acciones adicionales si es necesario
+          // Aquí podrías decidir si deseas desactivar la cámara o realizar otras acciones
+          setCameraActive(false);
+          navigate("/ModelSlider/1");
+        } else {
+          console.error("El documento del usuario no existe.");
+        }
+      } catch (error) {
+        console.error("Error al actualizar el documento:", error);
+      }
     }
   };
 
@@ -23,7 +72,6 @@ const QRScanner = () => {
     setFacingMode((prevFacingMode) =>
       prevFacingMode === 'environment' ? 'user' : 'environment'
     );
-    console.log('Nuevo facingMode:', facingMode);
   };
 
   const closeCamera = () => {
