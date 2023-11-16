@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import Label from '../label/label.jsx'
 import '../../App.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle,faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEye, faEyeSlash, faUserSecret  } from '@fortawesome/free-solid-svg-icons';
+
 import { Link, useNavigate } from 'react-router-dom';
 import appFirebase from '../../firebase/firebaseConfig.js'
 import img1 from '../../Imagenes/img1.png'
@@ -80,7 +78,6 @@ function Login(props) {
           <div style={{position: 'relative'}}>
             <input className='input-field' type={showPassword ? "text" : "password"} placeholder='contraseña' id='password'/>
             <button onClick={toggleShowPassword} type="button" style={{position: 'absolute', right: 25, top: 4, border: 'none', backgroundColor: 'transparent'}}>
-              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
             </button>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {error ? 
@@ -110,15 +107,12 @@ function Login(props) {
      
       <div className='div-botones'>
          <button onClick={signInWithGoogle} className='signin-button'>
-          <FontAwesomeIcon icon={faGoogle} />
         </button>    
 
         <button onClick={signInWithGithub} className='signin-button'>
-          <FontAwesomeIcon icon={faGithub} />
         </button>
 
         <button onClick={signInAnonimo} className='signin-button'>
-          <FontAwesomeIcon icon={faUserSecret} />
         </button>
       </div>
       </div>
