@@ -10,3 +10,4 @@ function Epet14qr() {
     );
 
 }
+export default Epet14qr;
